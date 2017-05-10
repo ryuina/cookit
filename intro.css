@@ -1,0 +1,117 @@
+
+body {
+	margin: 0;
+}
+
+
+#main {
+	position: relative;
+		width: 100%;
+
+}
+
+
+
+#search {
+	z-index: 1;
+
+	background-color:#88b04b; 
+	padding:10px;
+	width: 355px;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+#logo {
+	font-size: 2em;
+	align-self: center;
+	float: left;
+	position: relative;
+	width: 25%;
+}
+
+#searchBox {
+
+	width:75%;
+	height: 42px;
+	background-color: #ffffff;
+	float: left;
+	position: relative;
+	width: auto;
+}
+#input {
+	font-size: 1em;
+	border: 0px;
+	height:40px;
+	width:210px;	
+
+
+
+}
+
+#searchButton {
+	
+	font-size: 1em;
+	align-self: right;
+	height:40px;
+	width: 40px;
+	float:right;
+	vertical-align: center;	
+
+}
+
+#addList {
+	z-index: 1;
+
+	background-color: rgb(46, 163, 147);
+	height: 70px;
+	padding: 10px;
+	width: 355px;
+	position: fixed;
+	left: 0;
+	top: 62px;
+}
+
+.item {
+	background-color: #ffffff;
+	width: auto;
+	position: relative;
+	float: left;
+	padding:5px;
+	margin-right: 10px;
+}
+.itemName {
+	vertical-align: center;	
+
+	background-color: #ffffff;
+}
+
+
+
+.menuList {
+	margin-top: 160px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  z-index: -1;
+  background-color: #fff;
+  color: #444;
+  width: auto;
+  height: auto;
+}
+
+
+
+.menu {
+  background-color: #444;
+  color: #fff;
+  margin: 1%;
+  height: 48vw;
+  padding: 20px;
+  font-size: 150%;
+    z-index: 0;
+  border:0px;
+}
+
+
+

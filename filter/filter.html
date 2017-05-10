@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
+    </head>
+    <body>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>        
+    <script src="recipe.js"></script>
+    <script src="recipe_filter.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
+
+
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div></div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="filter.html">Cookit</a>
+                </div>
+            </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class = "closebtn" id="closeBtn">&times;</a>
+            <div class="filter">
+                
+                <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="50" data-slider-step="5" data-slider-value="[250,450]"/>
+            </div>
+            <div class="filter">
+                <font color="white">Difficulty<br></font>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" class="difbtns" id="easy"> Easy
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" class="difbtns" id="normal"> Normal
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="checkbox" class="difbtns" it="hard"> Hard
+                    </label>
+                </div>
+                <div>
+                    <button id="bb">Sibal</button>
+                </div>
+                
+            </div>
+        </div>
+
+            <!-- Use any element to open the sidenav -->
+            <span><button id="openBtn">open</button></span>
+        </div>
+        <div class="jumbotron">
+            <table id="resultTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Difficulty</th>
+                    <th>Ingredients</th>
+                </tr>
+            </table>
+        </div>      
+    </body>
+</html>
