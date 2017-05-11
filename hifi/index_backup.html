@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Recipe Optimization</title>
+<!--        setting-->
+        <meta charset="UTF-8">
+        <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+        <link href="./slider.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" /> 
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="./slider.js"></script>
+        <script src="./interaction.js"></script>
+        
+<!--        setting done-->
+    </head>
+    
+    <body>
+<!--        Top1-->
+        <div class="Block_recipe">
+            <p>Basic Aglio e Olio recipe</p>
+        </div>
+<!--        Top2-->
+        <div class="recipestep">
+            <div>
+                <h2>Step 1.</h2>
+            </div>
+            <div id="year-slider" class="no-ui-slider">
+                <div class="slider"></div>
+            </div>
+        </div>
+        
+<!--        Page-->
+        
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                
+                
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Slice garlic and break <span><button class="subst" id="peperoncino">peperoncino</button></span>.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="peperoncino">
+                            <div><h3>Substitute</h3></div>
+                            <div>1. Cheongyang chili</div>
+                            <div>2. Red eye's chili</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Put <span><button class="subst" id="salt">1% of salt</button></span> in boiling water and boil <span><button class="subst" id="phedelini">phedelini</button></span> for a given time.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="salt">
+                            <div><h3>Substitute</h3></div>
+                            <div>1. 1 pinch of salt per 100ml</div>
+                        </div>
+                        <div class="substtab" id="phedelini">
+                            <div><h3>Substitute</h3></div>
+                            <div>1. Spaghettini</div>
+                            <div>1. Plain noodle</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Grease the frying pan by 3 spoons of olive oil and fry garlic at weak fire.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        <span><button class="help" id="garlic">When garlic is golden,</button></span> put peperoncino and fry them 30-40 seconds.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="helptab" id="garlic">
+                            <div>Helping videos</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Put a half cup of water that boiled phedelini in <span><button class="subst" id="pan">pan</button></span>. When water is boiling, put phedelini in pan and fry it.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="pan">
+                            <div><h3>Substitute</h3></div>
+                            <div>1. Pot</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Season phedelini by salt and pepper, and then put <span><button class="subst" id="seasoning">parmasan and parsley</button></span> for deco.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="seasoning">
+                            <div><h3>Substitute</h3></div>
+                            <div>It is optional.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true
+                    });
+                </script>
+                 <div class="swiper-pagination"></div>
+                
+            </div>
+        </div>
+        
+        
+        
+        
+    </body>
+    
+</html>

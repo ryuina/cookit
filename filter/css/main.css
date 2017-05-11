@@ -1,4 +1,11 @@
-
+.headtab
+{
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
 /* navbar */
 
 .navbar-header
@@ -18,8 +25,14 @@
     margin:0 auto;
 }
 
+.bodybody
+{
+    margin-top: 55px;
+}
+
 .jumbotron
 {
+    position: relative;
     margin: 2%;
 }
 
@@ -65,7 +78,24 @@ th, td {
     margin: 0 auto;
 }
 
+.sidenav .submit {
+    display: block;
+    width : 98%;
+    margin: 2% auto;
+}
+
 .btn-group{
     width: auto;
     margin: 0 auto;
 }
+
+.slider{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btns{
+    width: 70%;
+    margin: 0 auto;
+}
+
