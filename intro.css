@@ -65,7 +65,7 @@ body {
 	z-index: 1;
 
 	background-color: rgb(46, 163, 147);
-	height: 70px;
+	min-height: 50px;
 	padding: 10px;
 	width: 355px;
 	position: fixed;
@@ -113,5 +113,30 @@ body {
   border:0px;
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+.container {
+	height: 180px;
+}
+.close {
+	right:0;
+	margin: 20px;
+	font-size: 1em;
+}
+
+p {
+	vertical-align: center;
+	margin: 20px;
+}
 
