@@ -2,14 +2,14 @@ $(document).ready(function() {
 	var ingredients=[];
 
 	var menus=["kimbab", "pizza", "aglio oglio", "french toast", "bibimbap", "pancake", "noodle"]
-	function printMenu() {
+	/*function printMenu() {
 		$(".menuList").empty();
 		var idx=Math.floor(Math.random() * (6 - 0)) + 0;
 		for (var i = 0; i < idx; i++) {
 			$(".menuList").append($('<div class=\"menu\">').append($('<a href=\"filter/filter.html\">').append(menus[i])));
 			
 		};
-	}
+	}*/
 	function addIngredient() {
 		
 		ingredients.unshift($('#input').val());
