@@ -1,0 +1,271 @@
+
+body {
+	margin: 0;
+}
+
+
+#main {
+	position: relative;
+
+}
+
+#listTitle {
+    margin-bottom:10px;
+}
+
+
+#navi {
+	z-index: 1;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	box-shadow: 0px 0px 4px #aaaaaa;
+	background-color: #ffffff;
+}
+
+.mainLogo {
+	z-index: 0;
+	float: left;
+	position: relative;
+	width: 44px;
+	height: 44px;
+	margin:  11px;
+}
+
+.backward {
+	z-index: 0;
+	float: right;
+	position: relative;
+	width: 44px;
+	height: 44px;
+	margin:  11px;
+}
+
+.tabheader {
+	height: 44px;
+    position: relative;
+	margin-left: 66px;
+	margin-right: 66px;
+	margin-top: 15px;
+	margin-bottom: 11px;
+    
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
+	font-size: 2em;
+    text-align: center;
+}
+
+#searchInput{
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	width: calc(100% - 53px);
+	height: 42px;
+	margin-left: 11px;	
+	padding: 0px;
+	border: none;
+	position: relative;
+	color: #898989;
+
+}
+
+.container-22 {
+	width: 100%;
+	height: 22px;
+}
+
+.container-19 {
+	width: 100%;
+	height: 19px;
+}
+
+.container-15 {
+	width: 100%;
+	height: 15px;
+}
+
+#recipeList {
+	width: calc(100% - 38px);
+	margin-top: 66px;
+	padding-left: 19px;
+	padding-right: 19px;
+
+}
+
+.menuName {
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	font-weight: 700;
+	color: #484848;
+}
+
+.gredientName {
+	font-family: 'Lato', sans-serif;
+	font-size: 0.5em;
+	font-weight: 700;
+	color: #484848;
+}
+
+.recipeLink {
+	position: relative;
+}
+
+.recipeImg {
+	width: 100%;
+	height: 56vw;
+	background-color: #484848;
+}
+
+.recipeTitle {
+    z-index: 0;
+    background-color: white;
+    opacity: 0.85;
+	width: 100%;
+	height: 3em;  
+	position: absolute;
+	bottom: 0;
+}
+
+.recipeName{
+    float:left;
+    margin-left: 12px;
+    margin-right: 12px;
+	margin-top: calc(22px - 0.5em);
+	margin-bottom: calc(22px - 0.5em);
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	color: #484848;
+	vertical-align: center;    
+}
+
+img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.options{
+    float: right;
+    width: 100px;
+	height: 29px;
+    position: relative;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    margin-left : 10px;
+    margin-right : 10px;
+}
+
+.option1{
+    width:29px;
+    height:29px;
+    text-align: center;
+    display: inline-block;
+}
+
+.option2{
+    width:29px;
+    height:29px;
+    text-align: center;
+    display: inline-block;
+}
+
+.option3{
+    width:29px;
+    height:29px;
+    text-align: center;
+    display: inline-block;
+}
+
+span.time{
+    position: absolute;
+    font-size: 0.5em;
+    font-weight: 600;
+    left: 43%;
+    top: 29%;
+}
+
+span.ingredient{
+    position: absolute;
+    font-size: 0.5em;
+    color: white;
+    left: 77%;
+    top: 29%;    
+}
+
+#bot{
+    position: fixed;
+    width: 100%;
+    height:44px;
+    margin-bottom : 19px;
+    bottom:0;
+}
+
+#filterBtn{
+	z-index: 1;
+    height : 44px;
+	width: 40%;
+	position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+	box-shadow: 2px 2px 2px rgba(80,80,80,0.5);
+    border:none;
+    border-radius: 25px;
+	background-color: #EA5A5F;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: white;
+}
+
+#addList {
+	padding-left: 11px;
+	padding-right: 11px;
+	background-color: #cccccc;
+	position: fixed;
+	top: 66px;
+	left: 0;
+	width: calc(100% - 22px);
+	box-shadow: 0px 1px 1px grey;
+}
+
+.ingreBox {
+	width: auto;
+	height: 33px;
+	position: relative;
+	border-radius: 15px;
+	background-color: #109E92;
+	float: left;
+	margin-bottom: 15px;
+	margin-right: 15px;
+	box-shadow: 1px 1px 1px grey;
+}
+
+.ingreName {
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	font-size: 1em;
+	height: 1em;
+	margin-left: 15px;
+	margin-right: 1px;
+	padding-top: calc((33px - 1em) / 2);
+	padding-bottom: calc((33px - 1em) / 2);
+	position: relative;
+	float: left;
+	color: #ffffff;
+}
+
+.deleteIngre {
+	float: right;
+	width:	16px;
+	height: 16px;
+	background-color: #ffffff;
+	border: none;
+	margin-top: calc((33px - 16px) / 2);
+	margin-bottom: calc((33px - 16px) / 2);
+	margin-right: 15px;
+	margin-left: 15px;
+	padding: 0;
+	position: relative;
+	opacity: .4;
+}

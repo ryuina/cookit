@@ -1,94 +1,90 @@
 <!DOCTYPE html>
 <html>  
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
+<head>
+    <title>Cookit!</title>
+    <meta charset="utf-8">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  
+    <link rel="stylesheet" href="filter.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>        
-    <script src="recipe.js"></script>
-    <script src="recipe_filter.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
-        <div class="headtab">
-            <nav class="navbar navbar-inverse">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="filter.html">Cookit</a>
-                </div>
-            </nav>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class = "closebtn" id="closeBtn">&times;</a>
-            <div class="filter">
-                <font color="white">Maximum Time<br></font>
-                <div class ="slider">
-                    <input type="range" min="0" max="50" value="25" id="fader" step="5">
-                    <output for="fader" id="volume"><font color="white">25</font></output>
-                </div>
+</head>
+<body>
+    <div id="main">
+		<div id= "navi">
+			<div class="mainLogo">
+                <img src="img/tLogo.png">
+			</div>
+            <div class="backward">
+                <img src="img/Turn_back.png">
             </div>
-            <div class="filter">
-                <font color="white">Maximum Ingredient<br></font>
-                <div class ="slider">
-                    <input type="range" min="0" max="10" value="5" id="fader2" step="1">
-                    <output for="fader2" id="volume2"><font color="white">5</font></output>
+			<div class="tabheader">
+				Select recipe
+			</div>
+
+		</div>
+        <div id ="recipeList">
+            <div class="container-22"></div>
+            
+            <div id="listTitle">
+				<span class = "menuName">"Yellow bap"</span>
+                <span class = "gredientName">- based on salt, pepperonchino</span>
+			</div>
+            
+            <div class="recipeBox">
+                <div class="recipeLink">
+                    <div class="recipeImg">
+                        <img src="http://i.ndtvimg.com/i/2015-08/best-curry-recipes-1_625x350_61440752359.jpg"></div>
+                    <div class="recipeTitle">
+                        <div class="options">
+                            <div class="option1"><img src="img/Easy.png"></div>
+                            <div class="option2"><img src="img/Time.png"><span class="time">10</span></div>
+                            <div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+3</span></div>
+                        </div>
+                        <div class="recipeName">Yellow bap</div>
+                    </div>
                 </div>
-            </div>            
-            <br>
-            <div class="filter">
-                <font color="white">Difficulty<br></font>
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default active">
-                        <input type="checkbox" class="difbtns" id="easy"> Easy
-                    </label>
-                    <label class="btn btn-default active">
-                        <input type="checkbox" class="difbtns" id="normal"> Normal
-                    </label>
-                    <label class="btn btn-default active">
-                        <input type="checkbox" class="difbtns" id="hard"> Hard
-                    </label>
-                </div>
+                <div class="container-19"></div>
             </div>
-            <div class="submit">
-                <div class="btns">
-                    <button id="allbtn">Reset</button> <button id="filbtn">Filter</button>
+
+            <div class="recipeBox">
+                <div class="recipeLink">
+                    <div class="recipeImg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUOY_YjKu4wp9sxtmqJrpZ_fZtZzQJe2Rs-T9oPVr8Qczn-bV"></div>
+                    <div class="recipeTitle">
+                        <div class="options">
+                            <div class="option1"><img src="img/Middle.png"></div>
+                            <div class="option2"><img src="img/Time.png"><span class="time">15</span></div>
+                            <div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+0</span></div>
+                        </div>
+                        <div class="recipeName">Curry hurry curry</div>
+                    </div>
                 </div>
+                <div class="container-19"></div>
             </div>
+    
+            <div class="recipeBox">
+                <div class="recipeLink">
+                    <div class="recipeImg">
+                        <img src="http://www.knbr.com/wp-content/uploads/sites/82/2015/11/CURRY-PROF.jpg"></div>
+                    <div class="recipeTitle">
+                        <div class="options">
+                            <div class="option1"><img src="img/Hard.png"></div>
+                            <div class="option2"><img src="img/Time.png"><span class="time">05</span></div>
+                            <div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+2</span></div>
+                        </div>
+                        <div class="recipeName">Stephen Curry</div>
+                    </div>
+                </div>
+                <div class="container-19"></div>
+            </div>    
+    
         </div>
-
-            <!-- Use any element to open the sidenav -->
-        <div class="bodybody">
-            <span><button id="openBtn">Filter</button></span>
-            <div class="jumbotron">
-                <table id="resultTable">
-                    <tr>
-                        <th>Name</th>
-                        <th>Time</th>
-                        <th>Difficulty</th>
-                        <th>Ingredients</th>
-                    </tr>
-                </table>
-            </div>      
+        <div id="bot">
+        <button type="button" id="filterBtn">
+            Filter</button>
         </div>
-
-        <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-        <div class="modal-content">
-            <div class="container"></div>
-            <span class="close">&times;</span>
-
-            <p>This is the second task. You can put some filters and check the results.</p>
-            <p>Suggestion : Easy or Normal</p>
-            <p>you can go to next step if you select a recipe, and you can close this window if you click X.</p>
-
-        </div>
-        </div>
-        <div id="help">
-            <button name="Button" id="myBtn" >help</button>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
