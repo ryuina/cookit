@@ -1,24 +1,31 @@
+
+
+
 $(document).ready(function() {
 	var ingredients=[];
-	/*
+	
 	function findMenu() {
-
+		var id = ingredients[0];
+		for (var i = 1; i < ingredients.length; i++) {
+			id += ","+ingredients[i];
+		}
+		console.log(id);
+		return menuList[id];
 	}
 	function printMenu() {
-		$(".menuResult").empty();
+		$("#menuResult").empty();
 
 		var menus = findMenu();
-
-
-		for (var i = 0; i < idx; i++) {
-			$(".menuResult").append($('<div class=\"menuLink\">')
+		console.log(menus);
+		for (var i = 0; i < menus.length; i++) {
+			$("#menuResult").append($('<div class=\"menuLink\">')
 								.append($('<div class=\"menuImg\">').append('<img src=\"\">'))
-								.append($('<div class=\"menuTitle\">').append($'<span class=\"title\">').append(menus[i])));
-			$(".menuResult").append($('<div class=\"container-19\">'));
+								.append($('<div class=\"menuTitle\">').append($('<span class=\"title\">').append(menus[i]))));
+			$("#menuResult").append($('<div class=\"container-19\">'));
 			
 		};
 
-	}*/
+	}
 	function onClick() {
 		$(".searchBox").click(function () {
 			if (ingredients.length){
