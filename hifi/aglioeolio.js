@@ -240,7 +240,7 @@ $( document ).ready(function() {
                                         	  });	
 
 
-    $("back_button").click(function (){
+    $(".back_button").click(function (){
        window.history.back(); 
     });
 });
