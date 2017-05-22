@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Task 3 : Recipe Optimization</title>
+        <meta charset="UTF-8">
+            <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="division.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="Swiper.js"></script>
+        <script src="./aglioeolio.js"></script>
+    </head>
+    <body>
+        <!---------------------------------------------- header ------------------------------------------------>
+        <div class="header">
+            <a href="index.html"><div class="home_menu"><img src="./cookit_logo.png" class="logo"></div></a>
+            <div class="task_title">Recipe</div>
+            <div class="back_button"><img src="./back.png" class="back"></div>
+        </div>
+        
+        <!--------------------------------------- title & progress bar ----------------------------------------->
+        <div class="controller">
+            <div class="recipe_title">Basic Aglio e Olio</div>
+            <div class="recipe_step">Step 1</div>
+            <div class="control_bar"><div id="slider"></div></div>
+        </div>
+        
+        <!------------------------------------------ recipe content -------------------------------------------->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                
+                
+                <div class="swiper-slide" id="1">
+        <!--        Content-->
+                    <div class="recipephoto"><img src="http://cdn.noshon.it/wp-content/uploads/2011-01-24-spaghetti-aglio-olio-4.jpg"></div>
+
+                        <div class="ingretitle">Ingredients</div>
+                        <div class="ingre">Peperoncino</div>
+                        <div class="ingre">Garlic</div>
+                        <div class="ingre">Phedelini</div>
+                        <div class="ingre">Olive oil</div>
+                        <div class="ingre">Salt</div>
+
+                    <div class="cooktitle">Cookware</div>
+                    <div class="ingre">Pan</div>
+                    <div class="ingre">Knife</div>
+                    <div class="ingre">Chopping board</div>
+                    <div class="ingre">Pot</div>
+                </div>
+                
+                
+                <div class="swiper-slide" id="2">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Slice garlic and break <span class="subst" id="peperoncino">peperoncino</span>.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="peperoncino">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="cheongyang_chili">Cheongyang chili</div>
+                            <div class="substcontent" id="red_eyes_chili">Red eye's chili</div>
+                            <div class="substcontent" id="peperoncino">Peperoncino</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide" id="3">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Put <span class="subst" id="salt">1% of salt</span> in boiling water and boil <span class="subst" id="phedelini">phedelini</span> for a given time.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="salt">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="pinch">1 pinch of salt per 100ml</div>
+                            <div class="substcontent" id="salt">1% of salt</div>
+                        </div>
+                        <div class="substtab" id="phedelini">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="spaghettini">Spaghettini</div>
+                            <div class="substcontent" id="plain_noodle">Plain noodle</div>
+                            <div class="substcontent" id="phedelini">Phedelini</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="4">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Grease the frying pan by 3 spoons of olive oil and fry garlic at weak fire.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="5">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        <span class="help" id="garlic">When garlic is golden</span>, put <span id="peperoncino1">peperoncino</span> and fry them 30-40 seconds.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="helptab" id="garlic">
+                            <div>
+                                <video controls><source src="./garlic.mp4" type="video/mp4"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="6">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Put a half cup of water that boiled <span id="phedelini1">phedelini</span> in <span class="subst" id="pan">pan</span>.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="pan">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="pot">Pot</div>
+                            <div class="substcontent" id="pan">Pan</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="7">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        When water is boiling, put <span id="phedelini2">phedelini</span> in pan and fry it.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="8">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Season <span id="phedelini3">phedelini</span> by salt and pepper, and then put <span class="subst" id="seasoning">parmasan and parsley</span> for deco.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="seasoning">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent">It is optional.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true
+                    });
+                </script>
+                 <div class="swiper-pagination"></div>
+                
+            </div>
+        </div>
+    </body>
+</html>

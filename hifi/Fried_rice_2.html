@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Task 3 : Recipe Optimization</title>
+        <meta charset="UTF-8">
+            <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+            <link href="./slider.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="division.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        
+        <script src="./friedrice2.js"></script>
+    </head>
+    <body>
+        <!---------------------------------------------- header ------------------------------------------------>
+        <div class="header">
+            <a href="index.html"><div class="home_menu"><img src="./cookit_logo.png" class="logo"></div></a>
+            <div class="task_title">Recipe</div>
+            <div class="back_button"><img src="./back.png" class="back"></div>
+        </div>
+        
+        <!--------------------------------------- title & progress bar ----------------------------------------->
+        <div class="controller">
+            <div class="recipe_title">Chicken fried rice</div>
+            <div class="recipe_step">Step 1</div>
+            <div class="control_bar"><div id="slider"></div></div>
+        </div>
+        
+        <!------------------------------------------ recipe content -------------------------------------------->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                
+                
+                <div class="swiper-slide" id="1">
+        <!--        Content-->
+                    <div class="recipephoto"><img src = "http://www.chineserecipesforall.com/images/uploads/recipes/chicken-fried-rice-recipe-RecipeMain-Chinese-Recipes-For-All.jpg"></div>
+
+                        <div class="ingretitle">Ingredients</div>
+                        <div class="ingre">1 pound chicken</div>
+                        <div class="ingre">3 cups cooked rice</div>
+                        <div class="ingre">2 Tbs sesame oil</div>
+                        <div class="ingre">1 small white onion, chopped</div>
+                        <div class="ingre">1 cup frozen peas and carrots, thawed</div>
+                        <div class="ingre">2-3 Tablespoons soy sauce</div>
+                        <div class="ingre">2 eggs</div>
+                        <div class="ingre">2 Tbsp chopped green onions</div>
+
+                    <div class="cooktitle">Cookware</div>
+                    <div class="ingre">Spatula</div>
+                    <div class="ingre">Knife</div>
+                    <div class="ingre">Chopping board</div>
+                    <div class="ingre">Wok</div>
+                </div>
+                
+                
+        
+                <div class="swiper-slide" id="2">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Cook and shred the chicken.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="3">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Preheat a <span class="subst" id="wok">wok</span> to medium heat and Pour <span class="subst" id="sesame">sesame oil</span> in the bottom.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="wok">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="pan">Pan</div>
+                            <div class="substcontent" id="wok">Wok</div>
+                        </div>
+                        <div class="substtab" id="sesame">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="olive">Olive oil</div>
+                            <div class="substcontent" id="canola">Canola oil</div>
+                            <div class="substcontent" id="sesame">Sesame oil</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="4">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Add <span class="subst" id="white">white onion</span> and peas and carrots and fry until tender.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="white">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent" id="onion">Onion</div>
+                            <div class="substcontent" id="white">White onion</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="5">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Slide the onion, peas and carrots to the side, and pour the beaten eggs onto the other side.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="6">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        <span class="help" id="spatula">Using a spatula, scramble the eggs</span>. Once cooked, mix the eggs with the vegetable mix.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="helptab" id="spatula">
+                            <div><video controls><source src="./scram.mp4" type="video/mp4"></video></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="swiper-slide" id="7">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Add the rice and chicken to the veggie and egg mixture.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="8">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        Pour the soy sauce on top. Stir and fry the rice and veggie mixture until heated through and combined.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="seasoning">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent">It is optional.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide" id="9">
+        <!--        Content-->
+                    <div class="recipecontent">
+                        <span class="subst" id="seasoning">Add chopped green onions</span> if desired.
+                    </div>
+        <!--        Subst-->
+                    <div class="base">
+                        <div class="substtab" id="seasoning">
+                            <div class="substtitle">Substitute</div>
+                            <div class="substcontent">It is optional.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <script>
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true
+                    });
+                </script>
+                 <div class="swiper-pagination"></div>
+                
+            </div>
+        </div>
+    </body>
+</html>
