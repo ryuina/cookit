@@ -2,170 +2,301 @@
 // has finished loading in the browser.
 
 $( document ).ready(function() {
-    //ideas=[];
     var recipe_table = recipes;
     
-    function printrecipes(){
-        var printTable = document.getElementById("resultTable");
-        
-        for(var i=0;i<recipes.length;i++){
-            var newRow = printTable.insertRow(1);
-            var newCell1 = newRow.insertCell(0);
-            var newCell2 = newRow.insertCell(1);
-            var newCell3 = newRow.insertCell(2);
-            var newCell4 = newRow.insertCell(3);
-            
-            newCell1.innerHTML = "<a href=\"../hifi/index_backup.html\">"+recipes[i]["name"]+"</a>";
-            newCell2.innerHTML = recipes[i]["time"];
-            newCell3.innerHTML = recipes[i]["difficulty"];
-            newCell4.innerHTML = recipes[i]["ingredient"];
-        }
-    }
-
-    function open() {
-        var openBtn = document.getElementById("openBtn");
-        openBtn.onclick = function() {
-            document.getElementById("mySidenav").style.width = "40%";
+    function getParameter() {
+        var parameters = location.search.substring(1).split("&");
+        if(parameters[0]!="")
+        {
+            menu = parameters[0].split("=")[1];
+            ingredients = parameters[1].split("=")[1].split(',');
         }
     }
     
-    function close() {
-        var closeBtn = document.getElementById("closeBtn");
-        closeBtn.onclick = function() {
-            document.getElementById("mySidenav").style.width = "0";
+    function showTitle() {
+        var nc = menu[0];
+        for(var i=1; i<menu.length; i++)
+        {
+            if(menu[i].toUpperCase() == menu[i])
+                nc = nc + " " + menu[i];
+            else
+                nc = nc + menu[i];
         }
-    }
-    
-    function dif(){
-        var difBtn = document.getElementsByClassName("difbtns");
-        var Btn = document.getElementById("filbtn")
-        Btn.onclick = function(){
-            for(var i=0;i<difBtn.length;i++)
+        $(".menuName").html('"'+nc+'"');
+        var content='- based on ';
+        for(var i=0; i<ingredients.length; i++)    
+        {
+            if(i==ingredients.length-1)
             {
-                if(difBtn[i].checked)
+                content = content + ingredients[i] + ".";
+            }
+            else
+            {
+                content = content + ingredients[i] + ", ";     
+            }
+            
+        }
+        $(".ingredientName").html(content);
+    }
+    
+    function fillcontent(img, name, difficulty, time, needigr) {
+        var difimg;
+        if(difficulty == 0)
+            difimg = "img/Easy.png";
+        else if(difficulty == 1)
+            difimg = "img/Middle.png";
+        else
+            difimg = "img/Hard.png";
+        
+        content = '<a href="'+'../hifi/'+'"><div class="recipeBox"><div class="recipeLink"><div class="recipeImg"><img src="' + img + '"></div><div class="recipeTitle"><div class="options"><div class="option1"><img src="' + difimg + '"></div><div class="option2"><img src="img/Time.png"><span class="time">' + time + '</span></div><div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+' + needigr + '</span></div></div><div class="recipeName">' + name + '</div></div></div><div class="container-19"></div></div></a>'
+        
+        return content;
+    }
+    
+    function showinit() {
+        $("#recipes").html("")
+        var tmpcontent = "";
+        var cnt;
+        var flag;
+        var time;
+        var ingredient;
+        var difficulty;
+        var exist;
+        
+        for(var i=0; i<recipes.length; i++)
+        {
+            flag = 0;
+            tmpcnt = "";
+            cnt = 0;
+            if(recipes[i]["menu"] == menu)
+            {
+                for(var j=0; j<recipes[i]["ingredients"].length; j++)
                 {
-                    console.log(i);
+                    for(var k=0; k<ingredients.length;k++)
+                    {
+                        if(ingredients[k]==recipes[i]["ingredients"][j])
+                        {
+                            flag = 1;
+                            cnt ++;
+                        }
+                    }
                 }
+                if(flag && cnt == ingredients.length)
+                {
+                    tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt)
+                    $("#recipes").append(tmpcontent);
+                }
+                else
+                {
+                    continue;
+                }
+                    
             }
         }
     }
     
-    function tim(){
-        var Btn = document.getElementById("fader");
-        Btn.oninput = function(e){
-            var v = document.getElementById("volume");
-            v.value = e.target.value;
-            v.style.color="white";
-        }
+    function filterEvent() {
+        $("#filterBtn").click(function(){
+            $("#filtertab").show('slow');
+            $("#greycover").show();
+            //$("#recipeList").css('opacity', '0.4');
+        });
+        $("#closeBtn").click(function(){
+            $("#filtertab").hide('slow');
+            $("#greycover").hide();
+            //$("#recipeList").css('opacity', '1');
+        });
     }
+    
+    function makedifslider() {
+        //var mySwiper = new Swiper('.swiper-container');
+    
+        var ticks = ['Easy', 'Normal', 'Hard'];
 
-    function ing(){
-        var Btn = document.getElementById("fader2");
-        Btn.oninput = function(e){
-            var v = document.getElementById("volume2");
-            v.value = e.target.value;
-            v.style.color="white";
-        }
+        var slider = $("#difslider").slider({
+            /*value: mySwiper.activeIndex,*/
+            range:true,
+            min:0,
+            max: ticks.length,
+            values: [0,3],
+            start: function(event, ui) {
+                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
+            },/*
+            change: function(event, ui) {
+                mySwiper.slideTo(ui.value);
+            },*/
+        });
+
+        $(ticks).each(function(i) {
+            var tick = $('<div class="tick ui-widget-content">' + this + '</div>').appendTo(slider);
+            tick.css({
+                left: (100 / ticks.length * i) + '%',
+                width: (100 / ticks.length) + '%'
+            });
+    })
+    $("#difslider .ui-slider-range").css('background','#109E92');
+    slider.find(".tick:first").css("border-left", "none");
+    }
+    
+    function maketimeslider() {
+        //var mySwiper = new Swiper('.swiper-container');
+    
+        var ticks = ['0', '5', '10', '15', '20', '25', '30'];
+
+        var slider = $("#timeslider").slider({
+            /*value: mySwiper.activeIndex,*/
+            range:true,
+            min:0,
+            max: ticks.length,
+            values: [0,7],
+            start: function(event, ui) {
+                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
+            },/*
+            change: function(event, ui) {
+                mySwiper.slideTo(ui.value);
+            },*/
+        });
+
+        $(ticks).each(function(i) {
+            var tick = $('<div class="tick ui-widget-content">' + this + '</div>').appendTo(slider);
+            tick.css({
+                left: (100 / ticks.length * i) + '%',
+                width: (100 / ticks.length) + '%'
+            });
+    })
+
+    $("#timeslider .ui-slider-range").css('background','#109E92');
+        
+    slider.find(".tick:first").css("border-left", "none");
+    }
+    
+    function makeinglider() {
+    
+        var ticks = ['1', '2', '3', '4', '5', '+6'];
+
+        var slider = $("#ingslider").slider({
+            /*value: mySwiper.activeIndex,*/
+            range:true,
+            min:0,
+            max: ticks.length,
+            values: [0,6],
+            start: function(event, ui) {
+                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
+            },
+//            change: function(event, ui) {
+//                $(this).value=ui.value;
+//            },
+        });
+
+        $(ticks).each(function(i) {
+            var tick = $('<div class="tick ui-widget-content">' + this + '</div>').appendTo(slider);
+            tick.css({
+                left: (100 / ticks.length * i) + '%',
+                width: (100 / ticks.length) + '%'
+            });
+    })
+    $("#ingslider .ui-slider-range").css('background','#109E92');
+    slider.find(".tick:first").css("border-left", "none");
     }    
     
-    function showall(){
-        var Btn = document.getElementById("allbtn");
-        Btn.onclick = function() {
-            document.getElementById("mySidenav").style.width = "0";
-            var printTable = document.getElementById("resultTable");
-
-            var numRows = printTable.rows.length;
-
-            for(var i=0; i<numRows-1;i++){
-                if(printTable.rows.length>1){
-                    printTable.deleteRow(1);
-                }
-            }
+    function submitEvent(){
+        $("#subBtn").click(function(){
+            $("#filtertab").hide('slow');
+            $("#greycover").hide();
             
-            for(var i=0;i<recipes.length;i++){
-                var newRow = printTable.insertRow(1);
-                var newCell1 = newRow.insertCell(0);
-                var newCell2 = newRow.insertCell(1);
-                var newCell3 = newRow.insertCell(2);
-                var newCell4 = newRow.insertCell(3);
-
-                newCell1.innerHTML = "<a href=\"../hifi/index_backup.html\">"+recipes[i]["name"]+"</a>";
-                newCell2.innerHTML = recipes[i]["time"];
-                newCell3.innerHTML = recipes[i]["difficulty"];
-                newCell4.innerHTML = recipes[i]["ingredient"];
-            }
-        }
-    }
-    
-    function showfil(){
-        var Btn = document.getElementById("filbtn");
-        Btn.onclick = function(){
+            var dm = $("#difslider").slider("values")[0];
+            var dM = $("#difslider").slider("values")[1]-1;
+            var tm = ($("#timeslider").slider("values")[0])*5;
+            var tM = ($("#timeslider").slider("values")[1]-1)*5;
+            var im = $("#ingslider").slider("values")[0];
+            var iM = $("#ingslider").slider("values")[1]-1;
             
-            document.getElementById("mySidenav").style.width = "0";
-            var printTable = document.getElementById("resultTable");
+            if (iM==5)
+                iM=9999;
+            $("#recipes").html("")
+            var tmpcontent = "";
+            var cnt;
+            var flag;
+            var time;
+            var ingredient;
+            var difficulty;
+            var exist;
 
-            var numRows = printTable.rows.length;
-
-            for(var i=0; i<numRows-1;i++){
-                if(printTable.rows.length>1){
-                    printTable.deleteRow(1);
-                }
-            }
-            
-            var difBtn = document.getElementsByClassName("difbtns");
-            console.log(difBtn[0].checked);
-            console.log(difBtn[1].checked);
-            console.log(difBtn[2].checked);
-            var maxtim = document.getElementById("fader").value;
-            var maxing = document.getElementById("fader2").value;
-            console.log(maxing);
-            console.log(maxtim);
-            for(var i = 0 ; i<recipes.length ; i++){
-                console.log(recipes[i]["name"])
-                console.log(recipes[i]["difficulty"])
-                console.log(recipes[i]["time"])
-                console.log(recipes[i]["ingredient"])
-                if((difBtn[recipes[i]["difficulty"]].checked) && (recipes[i]["time"]<=maxtim) && (recipes[i]["ingredient"]<=maxing))
+            for(var i=0; i<recipes.length; i++)
+            {
+                flag = 0;
+                tmpcnt = "";
+                cnt = 0;
+                if(recipes[i]["menu"] == menu)
                 {
-                    var newRow = printTable.insertRow(1);
-                    var newCell1 = newRow.insertCell(0);
-                    var newCell2 = newRow.insertCell(1);
-                    var newCell3 = newRow.insertCell(2);
-                    var newCell4 = newRow.insertCell(3);
+                    for(var j=0; j<recipes[i]["ingredients"].length; j++)
+                    {
+                        for(var k=0; k<ingredients.length;k++)
+                        {
+                            if(ingredients[k]==recipes[i]["ingredients"][j])
+                            {
+                                flag = 1;
+                                cnt ++;
+                            }
+                        }
+                    }
+//                    console.log(ingredients.length);
+//                    console.log(cnt);
 
-                    newCell1.innerHTML = "<a href=\"../hifi/index_backup.html\">"+recipes[i]["name"]+"</a>";
-                    newCell2.innerHTML = recipes[i]["time"];
-                    newCell3.innerHTML = recipes[i]["difficulty"];
-                    newCell4.innerHTML = recipes[i]["ingredient"];                        
+//                    console.log(recipes[i]["difficulty"]>=dm);
+//                    console.log(recipes[i]["difficulty"]<=dM);
+//                    
+//                    console.log(recipes[i]["time"]>=tm);
+//                    console.log(recipes[i]["time"]<=tM);
+//                    
+//                    console.log(recipes[i]["ingredients"].length-cnt)//>=
+//                    console.log(im);
+                    //console.log(recipes[i]["ingredients"].length-cnt)//<=
+//                    console.log(iM);
+                    
+                    if(flag && cnt == ingredients.length && recipes[i]["time"]>=tm && recipes[i]["time"]<=tM && recipes[i]["difficulty"]>=dm && recipes[i]["difficulty"]<=dM && (recipes[i]["ingredients"].length-cnt)>=im && (recipes[i]["ingredients"].length-cnt)<=iM)
+                    {
+                        tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt)
+                        $("#recipes").append(tmpcontent);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
                 }
-            }
-        }
-    }
-    function closeHelp() {
-		var modal = document.getElementById('myModal');
-		var btn = document.getElementById("myBtn");
-		var span = document.getElementsByClassName("close")[0];
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-		window.onclick = function(event) {
-			if (event.target == modal) {
-	    		modal.style.display = "none";
-			}
-		}
-
+            }     
+        });
     }
     
-    printrecipes();
-    open();
-    close();
-    dif();
-    tim();
-    ing();
-    showall();
-    showfil();
-    closeHelp();
+    function resetEvent()
+    {
+        $("#resetBtn").click(function(){
+            $("#filtertab").hide('slow');
+            $("#greycover").hide();
+            $("#difslider").slider("values", [0,3]);
+            $("#timeslider").slider("values", [0,6]);
+            $("#ingslider").slider("values", [0,7]);
+            showinit();
+        });
+    }
+    
+    function backEvent()
+    {
+        $("#backward").click(function(){
+            window.history.back();
+        });
+	};
+    
+
+    filterEvent();
+    getParameter();
+    showTitle();
+    showinit();
+    makedifslider();
+    maketimeslider();
+    makeinglider();
+    submitEvent();
+    resetEvent();
+    backEvent();
 });

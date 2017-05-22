@@ -78,7 +78,9 @@ $(document).ready(function() {
     }
 	function cancelClick() {
 		$(".deleteIngre").click(function () {
+			console.log($(this).closest('.ingreBox').data('idx'));
 			ingredients.splice($(this).closest('.ingreBox').data('idx'), 1);
+
 			$(this).closest('.ingreBox').remove();
 
 			if (ingredients.length == 0){
