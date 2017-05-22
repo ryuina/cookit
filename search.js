@@ -21,6 +21,9 @@ $(document).ready(function() {
 	}
 	function printMenu() {
 		$("#listTitle").val("Menu Results");
+		console.log($("#menuList").css("margin-top") + $("#addList").css('height'));
+		$("#menuList").css("margin-top", 66 + parseInt($("#addList").css('height')));
+
 		$("#menuResult").empty();
 		var id = findMenu();
 		var menus = menuList[id];
