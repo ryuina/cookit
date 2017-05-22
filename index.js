@@ -10,6 +10,7 @@ $(document).ready(function() {
 			
 		};
 	}*/
+    
 	function addIngredient() {
 		
 		ingredients.unshift($('#input').val());
