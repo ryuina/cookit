@@ -1,6 +1,6 @@
 var menuList={
 "Egg" : ["Eggmal-i", "Fried Egg", "Stim Egg"],
-"Rice" : ["Curry Rice", "Curry Ramen"],
+"Rice" : ["Curry Rice"],
 "Egg,Rice" : ["Egg Rice", "FriedRice", "Bibimbap"],
 "Rice,Egg" : ["Egg Rice", "FriedRice", "Bibimbap"],
 "Egg,Rice,Carrot" : ["Egg Rice", "FriedRice", "Bibimbap"],

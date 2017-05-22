@@ -39,7 +39,7 @@ $( document ).ready(function() {
         $(".ingredientName").html(content);
     }
     
-    function fillcontent(img, name, difficulty, time, needigr) {
+    function fillcontent(img, name, difficulty, time, needigr, url) {
         var difimg;
         if(difficulty == 0)
             difimg = "img/Easy.png";
@@ -48,7 +48,7 @@ $( document ).ready(function() {
         else
             difimg = "img/Hard.png";
         
-        content = '<a href="'+'../hifi/'+'"><div class="recipeBox"><div class="recipeLink"><div class="recipeImg"><img src="' + img + '"></div><div class="recipeTitle"><div class="options"><div class="option1"><img src="' + difimg + '"></div><div class="option2"><img src="img/Time.png"><span class="time">' + time + '</span></div><div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+' + needigr + '</span></div></div><div class="recipeName">' + name + '</div></div></div><div class="container-19"></div></div></a>'
+        content = '<a href="'+'../hifi/'+url+'"><div class="recipeBox"><div class="recipeLink"><div class="recipeImg"><img src="' + img + '"></div><div class="recipeTitle"><div class="options"><div class="option1"><img src="' + difimg + '"></div><div class="option2"><img src="img/Time.png"><span class="time">' + time + '</span></div><div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+' + needigr + '</span></div></div><div class="recipeName">' + name + '</div></div></div><div class="container-19"></div></div></a>'
         
         return content;
     }
@@ -83,7 +83,7 @@ $( document ).ready(function() {
                 }
                 if(flag && cnt == ingredients.length)
                 {
-                    tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt)
+                    tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt, recipes[i]["url"]);
                     $("#recipes").append(tmpcontent);
                 }
                 else
@@ -256,7 +256,7 @@ $( document ).ready(function() {
                     
                     if(flag && cnt == ingredients.length && recipes[i]["time"]>=tm && recipes[i]["time"]<=tM && recipes[i]["difficulty"]>=dm && recipes[i]["difficulty"]<=dM && (recipes[i]["ingredients"].length-cnt)>=im && (recipes[i]["ingredients"].length-cnt)<=iM)
                     {
-                        tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt)
+                        tmpcontent = fillcontent(recipes[i]["img"], recipes[i]["name"], recipes[i]["difficulty"], recipes[i]["time"], recipes[i]["ingredients"].length-cnt, recipes[i]["url"]);
                         $("#recipes").append(tmpcontent);
                     }
                     else

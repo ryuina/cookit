@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 		$(".mainLogo").click(function () {
 			if( $('#addList').is(':visible') ) {
-    			$(".mainLogo img").attr('src', 'img/tLogo.png')
+    			$(".mainLogo img").attr('src', 'img/cookit_logo.png')
 
     			$('#addList').hide();
     			$('#searchInput').val(listToString());
