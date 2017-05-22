@@ -10,9 +10,9 @@ var recipes = [
 {"menu" : "FriedRice", "name" : "Egg Fried Rice", "time" : "10", "difficulty" : "0", "ingredients" : ['Egg', 'Sesame oil', 'Vegetable oil', 'Rice', 'peas' , 'Onions', 'beansprouts', 'Soy sauce', 'white pepper'], "img" : "http://ichef.bbci.co.uk/food/ic/food_16x9_448/recipes/eggfriedrice_67782_16x9.jpg", "url" : ""},
 
 //menu : Pasta
-{"menu" : "Pasta", "name" : "Basic Aglio e Olio", "time" : "10", "difficulty" : "0", "ingredients" : ['peperoncino', 'Garlic', 'phedelini', 'olive oil', 'salt'], "img" : "http://cdn.noshon.it/wp-content/uploads/2011-01-24-spaghetti-aglio-olio-4.jpg", "url" :"Aglio_e_Olio.html"},
+{"menu" : "Pasta", "name" : "Basic Aglio e Olio", "time" : "10", "difficulty" : "0", "ingredients" : ['peperoncino', 'Garlic', 'Phedelini', 'olive oil', 'salt'], "img" : "http://cdn.noshon.it/wp-content/uploads/2011-01-24-spaghetti-aglio-olio-4.jpg", "url" :"Aglio_e_Olio.html"},
 {"menu" : "Pasta", "name" : "Fresh Vongola Verace", "time" : "15", "difficulty" : "1", "ingredients" : [], "url" : ""},
-{"menu" : "Pasta", "name" : "Creamy Carbonara", "time" : "15", "difficulty" : "2", "ingredients" : ['bacon', 'garlic', 'phedelini', 'Egg', 'parmesan', 'olive oil'], "img" : "http://media.foodnetwork.ca/recipetracker/dmm/C/R/Creamy_Chicken_Carbonara_001.jpg", "url" : "Carbonara.html"},
+{"menu" : "Pasta", "name" : "Creamy Carbonara", "time" : "15", "difficulty" : "2", "ingredients" : ['Bacon', 'Garlic', 'Phedelini', 'Egg', 'parmesan', 'olive oil'], "img" : "http://media.foodnetwork.ca/recipetracker/dmm/C/R/Creamy_Chicken_Carbonara_001.jpg", "url" : "Carbonara.html"},
 {"menu" : "Pasta", "name" : "Baek’s tomato sausage pasta", "time" : "15", "difficulty" : "1", "ingredients" : [] , "url" : ""},
 
 //menu : Sandwich

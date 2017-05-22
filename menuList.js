@@ -4,8 +4,8 @@ var menuList={
 "Egg,Rice" : ["Egg Rice", "FriedRice", "Bibimbap"],
 "Rice,Egg" : ["Egg Rice", "FriedRice", "Bibimbap"],
 "Egg,Rice,Carrot" : ["Egg Rice", "FriedRice", "Bibimbap"],
-"Garlic,Phedilini" : ["Pasta"],
-"Phedilini,Garlic" : ["Pasta"],
+"Garlic,Phedelini" : ["Pasta"],
+"Phedelini,Garlic" : ["Pasta"],
 "Rice,Garlic": ["FriedRice"],
 "Garlic,Rice": ["FriedRice"]}
 
