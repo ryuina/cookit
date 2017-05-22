@@ -3,9 +3,26 @@
 
 $( document ).ready(function() {
     
+    $(document).mousemove(function(event){
+    var element = document.getElementsByClassName("swiper-slide-active");
+    if(element != undefined) {
+        var id = element[0].id - 1;
+        $(".recipe_step").text("Step "+id);
+    }
+});
+    
+    $(document).on("swipe", function(event){
+    var element = document.getElementsByClassName("swiper-slide-active");
+    if(element != undefined) {
+        var id = element[0].id - 1;
+        $(".recipe_step").text("Step "+id);
+    }
+});
+    
+    
     var mySwiper = new Swiper('.swiper-container');
     
-    var ticks = ['1', '2', '3', '4', '5', '6'];
+    var ticks = ['1', '2', '3', '4', '5', '6', '7'];
 
     var slider = $("#slider").slider({
         range: "min",
@@ -20,15 +37,8 @@ $( document ).ready(function() {
         },
     });
 
-    $(ticks).each(function(i) {
-        var tick = $('<div class="tick ui-widget-content">' + this + '</div>').appendTo(slider);
-        tick.css({
-            left: (100 / ticks.length * i) + '%',
-            width: (100 / ticks.length) + '%'
-        });
-    })
 
-    slider.find(".tick:first").css("border-left", "none"); 
+
     
     $(document).mousemove(function(event){
         var element = document.getElementsByClassName("swiper-slide-active");
@@ -132,8 +142,7 @@ $( document ).ready(function() {
                                                   seasoningstatus = 0;
                                                   }
                                         	  });
-
+    $("back_button").click(function (){
+       window.history.back(); 
+    });
 });
-
-
-

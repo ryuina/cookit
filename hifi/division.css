@@ -1,3 +1,35 @@
+img {
+    min-width: calc(100% - 20px);
+    min-height: 100%;
+    max-width: calc(100% - 20px);
+    max-height: 100%;
+}
+
+video{
+    width : 100%;
+    height : 100%;
+}
+
+
+.logo{
+    min-width : 41px;
+    min-height : 41px;
+    max-width : 41px;
+    max-height : 41px;
+    margin-top : 13px;
+    margin-left : 13px;
+}
+
+.back{
+    min-width : 31px;
+    min-height : 31px;
+    max-width : 31px;
+    max-height : 31px;
+    margin-top : 18px;
+    margin-left : 15px;
+}
+
+
 .ui-slider {
     left : 20px;
     width : calc(100% - 60px);
@@ -9,10 +41,11 @@
     background:url("Bar_button.png") no-repeat; overflow: hidden ;
     background-size:contain;
     position:absolute;
-    border-style:none; 
+    border-style:none;
+    top:-8px;
 }
 
-#slider .tick { z-index: 2; position: absolute; height: 100%; font-size: 1.8em; line-height: 1.8em; background: none; border-top: none; border-right: none; border-bottom: none; text-align: center; }
+
 
 .header{
     width : 100%;
@@ -57,7 +90,7 @@
 }
 
 .controller{
-    width : calc(100% - 38px);
+    width : calc(100%);
     height : 87px;
     position : fixed;
     left : 0;
@@ -66,7 +99,6 @@
     padding-top : 10px;
     padding-bottom: 10px;
     padding-left : 19px;
-    padding-right : 19px;
     background-color : #EAEAEA;
     z-index:90;
 }
@@ -88,22 +120,25 @@
     font-size:1em;
     color : #484848;
     margin-left : 19px;
+    margin-top : 3px;
+    margin-bottom : 10px;
 }
 
 .control_bar{
-    width : 100%;
+    width : calc(100% - 20px);
     height : 29px;
+    padding-top : 8px;
 }
 
 .swiper-container{
-    width : calc(100%);
-    height : 510px;
+    width : 100%;
     top : 170px;
     left : 0px;
     padding-top : 18px;
-    padding-left : 10px;
-    padding-right : 20px;
+    padding-left: 10px;
+    padding-right:10px;
     background-color : #FFFFFF;
+    margin-bottom : 10px;
 }
 
 
@@ -113,20 +148,74 @@
     font-size : 1.2em;
 }
 
+.recipephoto{
+    margin-bottom : 10px;
+}
+
+.ingretitle{
+    font-family: 'Lato', sans-serif;
+    font-size : 1.2em;
+    color : #E9565E;
+    font-weight : bold;
+    margin-bottom : 10px;
+}
+
+.ingre{
+    font-family: 'Lato', sans-serif;
+    font-size : 1em;
+    margin-left : 20px;
+    margin-bottom : 7px;
+}
+
+.cooktitle{
+    font-family: 'Lato', sans-serif;
+    font-size : 1.2em;
+    font-weight : bold;
+    margin-top : 20px;
+    margin-bottom : 10px;
+    color : #0099FF;
+}
+
+.cook{
+    font-family: 'Lato', sans-serif;
+    font-size : 1em;
+}
+
+
 .subst{
     color : #E9565E;
     }
 
+.help{
+    color: #0099FF;
+}
+
 .substtab{
     width : calc(100% - 40px);
-    background-color: #FF6D76;
+    background-color: #FFCCCC;
     padding : 10px;
     margin-top : 20px;
+    font-family: 'Lato', sans-serif;
+    font-size : 1em;
+    font-weight : 500;
+}
+
+.substtitle{
+    font-size : 1.2em;
+    font-weight : 600;
+    margin-bottom : 5px;
+    color : #333333;
+}
+
+.substcontent{
+    margin-top : 5px;
+    margin-bottom : 5px;
+    margin-left : 10px;
 }
 
 .helptab{
     width : calc(100% - 40px);
-    background-color: #0099FF;
+    background-color: #AACCFF;
     padding : 10px;
     margin-top : 20px;
 }
