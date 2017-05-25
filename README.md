@@ -41,7 +41,7 @@ If you want to cancel it, press 'reset' button.
 On recipe, there are three icons.
 First circle is difficulty, second icon is cooking time, and the third one means aditional ingredients.
 
-**for ver.1) available recipe : Basic Aglio e Olio, Creamy Carbonara, Chicken fried rice, Fried rice restaurant style
+**for ver.1) available recipe : Basic Aglio e Olio, Creamy Carbonara, Chicken fried rice, Fried rice restaurant style**
 
 On /filter/
 
