@@ -24,7 +24,7 @@ Each time you change the ingredients, we suggent you some available menus.
 
 **for ver.1) available menu : Pasta, FriedRice**  
 
-On /index.html, 
+On /
 
 2. recipe result
 When you choose a menu, then you can see recipes.
