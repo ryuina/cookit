@@ -85,6 +85,7 @@ $(document).ready(function() {
 
 			if (ingredients.length == 0){
 				$('#addList').hide();
+				$('#menuResult').append(rcmd);
 			}
 			printMenu();
 
