@@ -85,9 +85,15 @@ $(document).ready(function() {
 
 			if (ingredients.length == 0){
 				$('#addList').hide();
+				$("#menuList").css("margin-top", 66);
+				$("#listTitle").val("Recommenadation");
+				$("#menuResult").empty();
 				$('#menuResult').append(rcmd);
 			}
-			printMenu();
+			else{
+				printMenu();
+			}
+				
 
 		});
 
