@@ -1,13 +1,13 @@
 var menuList={
-"Egg" : ["Eggmal-i", "Fried Egg", "Stim Egg"],
-"Rice" : ["Curry Rice"],
-"Egg,Rice" : ["Egg Rice", "FriedRice", "Bibimbap"],
-"Rice,Egg" : ["Egg Rice", "FriedRice", "Bibimbap"],
-"Egg,Rice,Carrot" : ["Egg Rice", "FriedRice", "Bibimbap"],
-"Garlic,Phedelini" : ["Pasta"],
-"Phedelini,Garlic" : ["Pasta"],
-"Rice,Garlic": ["FriedRice"],
-"Garlic,Rice": ["FriedRice"]}
+"egg" : ["Eggmal-i", "Fried Egg", "Stim Egg"],
+"rice" : ["Curry Rice"],
+"egg,rice" : ["Egg Rice", "FriedRice", "Bibimbap"],
+"rice,egg" : ["Egg Rice", "FriedRice", "Bibimbap"],
+"egg,rice,carrot" : ["Egg Rice", "FriedRice", "Bibimbap"],
+"garlic,phedelini" : ["Pasta"],
+"phedelini,garlic" : ["Pasta"],
+"rice,garlic": ["FriedRice"],
+"garlic,rice": ["FriedRice"]}
 
 var menuSrc={
 	"Eggmal-i" : "http://cfile10.uf.tistory.com/image/187CD245504C5914233C22",

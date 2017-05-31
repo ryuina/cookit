@@ -12,16 +12,15 @@ $(document).ready(function() {
 		return id;
 	}
 	function findMenu() {
-		var id = ingredients[0];
+		var id = ingredients[0].toLowerCase();
 		for (var i = 1; i < ingredients.length; i++) {
-			id += ","+ingredients[i];
+			id += ","+ingredients[i].toLowerCase();
 		}
 		console.log(id);
 		return id;
 	}
 	function printMenu() {
 		$("#listTitle").val("Menu Results");
-		console.log($("#menuList").css("margin-top") + $("#addList").css('height'));
 		$("#menuList").css("margin-top", 66 + parseInt($("#addList").css('height')));
 
 		$("#menuResult").empty();
