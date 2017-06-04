@@ -97,12 +97,12 @@ $( document ).ready(function() {
     
     function filterEvent() {
         $("#filterBtn").click(function(){
-            $("#filtertab").show('slow');
+            $("#filtertab").show('fast');
             $("#greycover").show();
             //$("#recipeList").css('opacity', '0.4');
         });
         $("#closeBtn").click(function(){
-            $("#filtertab").hide('slow');
+            $("#filtertab").hide('fast');
             $("#greycover").hide();
             //$("#recipeList").css('opacity', '1');
         });
@@ -281,12 +281,12 @@ $( document ).ready(function() {
         });
     }
     
-    function backEvent()
-    {
-        $("#backward").click(function(){
-            window.history.back();
-        });
-	};
+//    function backEvent()
+//    {
+//        $("#backward").click(function(){
+//            window.history.back();
+//        });
+//	};
     
 
     filterEvent();

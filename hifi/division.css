@@ -9,26 +9,6 @@ video{
     height : 100%;
 }
 
-
-.logo{
-    min-width : 41px;
-    min-height : 41px;
-    max-width : 41px;
-    max-height : 41px;
-    margin-top : 13px;
-    margin-left : 13px;
-}
-
-.back{
-    min-width : 31px;
-    min-height : 31px;
-    max-width : 31px;
-    max-height : 31px;
-    margin-top : 18px;
-    margin-left : 15px;
-}
-
-
 .ui-slider {
     left : 20px;
     width : calc(100% - 60px);
@@ -47,38 +27,52 @@ video{
 
 
 .header{
+    z-index: 1;
     width : 100%;
-    height : 66px;
     position : fixed;
+    height : 66px;
     left : 0;
     top : 0;
-    box-shadow : 0px 1.4px 1.4px #CCCCCC;
-    z-index:100;
-    background-color : #FFFFFF;
+    box-shadow: 0px 1px 4px #aaaaaa;
+    background-color : #EA5B60;
+}
+
+#mainLogoBox {
+	z-index: 0;
+	float: left;
+	position: relative;
+	width: 66px;
+	height: 66px;
+    background-color: #DA2D37;
 }
 
 .home_menu{
-    width : 67px;
-    height : 67px;
-    position: fixed;
-    left : 0;
-    top : 0;
+    z-index: 0;
+	float: left;
+    width : 44px;
+    height : 44px;
+    margin: 11px;
+    position: relative;   
+}
+
+.logo{
+    min-width: 0;
+    max-width: 44px;  
 }
 
 .task_title{
-    width : calc(100% - 134px);
-    height: 55px;
-    position : fixed;
-    top:0;
-    left:67px;
-    padding-top:12px;
+    height: 44px;
+    position: relative;
+	margin-left: 77px;
+	margin-top: 14px;
+	margin-bottom: 11px;
     
-    text-align : center;
-    font-size : 2em;
-    font-weight: 500;
-    color : #111111;
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
+    font-weight: 700;
+	font-size: 2em;
+    color : #ffffff;
 }
+
 
 .back_button{
     width : 67px;

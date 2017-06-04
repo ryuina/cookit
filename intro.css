@@ -18,7 +18,7 @@ body {
 	left: 0;
 	top: 0;
 	box-shadow: 0px 0px 4px #aaaaaa;
-	background-color: #ffffff;
+	background-color: #EA5B60;
 }
 
 .mainLogo {
@@ -31,6 +31,16 @@ body {
 	margin:  11px;
 }
 
+.mainLogoBox {
+	z-index: 0;
+
+	float: left;
+	position: relative;
+	width: 66px;
+	height: 66px;
+    background-color: #DA2D37;
+}
+
 img {
     min-width: 100%;
     min-height: 100%;
@@ -40,14 +50,15 @@ img {
 .searchBox {
 	height: 42px;
 	position: relative;
-	margin-left: 66px;
+	margin-left: 77px;
 	margin-right: 11px;
 	margin-top: 11px;
 	margin-bottom: 11px;
 	border: 1px solid #cccccc;
 
-	border-radius: 4px;
+/*	border-radius: 4px;*/
 	box-shadow: 0px 1px 1px grey;
+    background-color: #ffffff;
 }
 
 #searchInput{
