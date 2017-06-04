@@ -16,9 +16,8 @@ body {
 
 
 #navi {
-	z-index: 1;
 	width: 100%;
-	position: fixed;
+	position: absolute;
 	height: 66px;
 	left: 0;
 	top: 0;
@@ -88,7 +87,7 @@ body {
 
 #recipeList {
 	width: calc(100% - 38px);
-	margin-top: 66px;
+	//margin-top: 66px;
 	padding-left: 19px;
 	padding-right: 19px;
 
@@ -220,7 +219,7 @@ span.ingredient{
 
 #filtertab{
 	z-index: 3;
-    height: 70%;
+    height: 75%;
 	width: 100%;
     left:0;
     bottom:0;
@@ -260,7 +259,7 @@ span.ingredient{
 #greycover {
     z-index: 2;
     position:fixed;
-    height: calc(100% - 71px);
+    height: 100%;
     width: 100%;
     left:0;
     bottom:0;
