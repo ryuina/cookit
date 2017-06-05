@@ -11,27 +11,49 @@ $(document).ready(function() {
 		console.log(id);
 		return id;
 	}
-	function findMenu() {
-		var id = ingredients[0].toLowerCase();
+	function listToID(){
+		var id = ingredients[0];
 		for (var i = 1; i < ingredients.length; i++) {
 			id += ","+ingredients[i].toLowerCase();
 		}
 		console.log(id);
 		return id;
 	}
+	function findMenu() {
+		//var id = ingredients[0].toLowerCase();
+		result = []
+		for (var i = 0; i < menuList.length; i++) {
+			success = true;
+			for (var j = 0; j < ingredients.length; j++) {
+				if (jQuery.inArray(ingredients[j].toLowerCase(), menuList[i]["ingredients"]) == -1 ){
+					success = false;
+				}
+			}
+			if (success){
+				result.push(menuList[i]);
+			}
+		}
+		console.log(result);
+		return result
+		/*
+		for (var i = 1; i < ingredients.length; i++) {
+			id += ","+ingredients[i].toLowerCase();
+		}
+		return id;*/
+	}
 	function printMenu() {
 		$("#listTitle").val("Menu Results");
 		$("#menuList").css("margin-top", 66 + parseInt($("#addList").css('height')));
 
 		$("#menuResult").empty();
-		var id = findMenu();
-		var menus = menuList[id];
+		var menus = findMenu();
+		
 		console.log(menus);
 		for (var i = 0; i < menus.length; i++) {
 			$("#menuResult").append($('<div class=\"menuLink\">')
-								.append($('<a>').attr('href','filter/filter.html?menu='+menus[i]+'&ingredients='+id)
-									.append($('<div class=\"menuImg\">').append('<img src='+menuSrc[menus[i]]+'>')))
-								.append($('<div class=\"menuTitle\">').append($('<span class=\"title\">').append(menus[i]))));
+								.append($('<a>').attr('href','filter/filter.html?menu='+menus[i]["name"]+'&ingredients='+listToID())
+									.append($('<div class=\"menuImg\">').append('<img src='+menuSrc[menus[i]["name"]]+'>')))
+								.append($('<div class=\"menuTitle\">').append($('<span class=\"title\">').append(menus[i]["name"]))));
 			$("#menuResult").append($('<div class=\"container-19\">'));
 			
 		};

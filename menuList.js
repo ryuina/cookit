@@ -1,5 +1,28 @@
-var menuList={
-"egg" : ["Eggmal-i", "Fried Egg", "Stim Egg"],
+var menuList=[
+	{"id" : 1,
+	"name" : "Fried Egg", 
+	"ingredients" : ["egg"]},
+	{"id" : 2,
+	"name" : "Stim Egg",
+	"ingredients" : ["egg"]},
+	{"id" : 3,
+	"name" : "Curry Rice",
+	"ingredients" : ["rice", "curry"]},
+	{"id" : 4, 
+	"name" : "Egg Rice",
+	"ingredients" : ["rice", "egg"]},
+	{"id" : 5, 
+	"name" : "FriedRice",
+	"ingredients" : ["rice", "egg", "carrot"]},
+	{"id" : 6,
+	"name" : "Bibimbap",
+	"ingredients" : ["rice", "egg", "carrot"]},
+	{"id" : 7,
+	"name" : "Pasta",
+	"ingredients" : ["phedelini", "garlic"]}
+	]
+
+/*{"egg" : ["Eggmal-i", "Fried Egg", "Stim Egg"],
 "rice" : ["Curry Rice"],
 "egg,rice" : ["Egg Rice", "FriedRice", "Bibimbap"],
 "rice,egg" : ["Egg Rice", "FriedRice", "Bibimbap"],
@@ -8,7 +31,7 @@ var menuList={
 "phedelini,garlic" : ["Pasta"],
 "rice,garlic": ["FriedRice"],
 "garlic,rice": ["FriedRice"]}
-
+*/
 var menuSrc={
 	"Eggmal-i" : "http://cfile10.uf.tistory.com/image/187CD245504C5914233C22",
 	"Fried Egg" : "http://cfile25.uf.tistory.com/image/241CDB4F55ACAA5218F9FA",
