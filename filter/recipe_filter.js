@@ -42,13 +42,13 @@ $( document ).ready(function() {
     function fillcontent(img, name, difficulty, time, needigr, url) {
         var difimg;
         if(difficulty == 0)
-            difimg = "img/Easy.png";
+            difimg = "Easy";
         else if(difficulty == 1)
-            difimg = "img/Middle.png";
+            difimg = "Normal";
         else
-            difimg = "img/Hard.png";
+            difimg = "Hard";
         
-        content = '<a href="'+'../hifi/'+url+'"><div class="recipeBox"><div class="recipeLink"><div class="recipeImg"><img src="' + img + '"></div><div class="recipeTitle"><div class="options"><div class="option1"><img src="' + difimg + '"></div><div class="option2"><img src="img/Time.png"><span class="time">' + time + '</span></div><div class="option3"><img src="img/Ingredient_needed.png"><span class="ingredient">+' + needigr + '</span></div></div><div class="recipeName">' + name + '</div></div></div><div class="container-19"></div></div></a>'
+        content = '<a href="'+'../hifi/'+url+'"><div class="recipeBox"><div class="recipeLink"><div class="option1">'+ difimg +'</div><div class="option2">' + time + ' MIN.</div><div class="option3">+' + needigr + ' ING. </div><div class="recipeImg"><img src="' + img + '"></div><div class="recipeTitle"><div class="recipeName">' + name + '</div></div></div><div class="container-19"></div></div></a>'
         
         return content;
     }
@@ -240,19 +240,6 @@ $( document ).ready(function() {
                             }
                         }
                     }
-//                    console.log(ingredients.length);
-//                    console.log(cnt);
-
-//                    console.log(recipes[i]["difficulty"]>=dm);
-//                    console.log(recipes[i]["difficulty"]<=dM);
-//                    
-//                    console.log(recipes[i]["time"]>=tm);
-//                    console.log(recipes[i]["time"]<=tM);
-//                    
-//                    console.log(recipes[i]["ingredients"].length-cnt)//>=
-//                    console.log(im);
-                    //console.log(recipes[i]["ingredients"].length-cnt)//<=
-//                    console.log(iM);
                     
                     if(flag && cnt == ingredients.length && recipes[i]["time"]>=tm && recipes[i]["time"]<=tM && recipes[i]["difficulty"]>=dm && recipes[i]["difficulty"]<=dM && (recipes[i]["ingredients"].length-cnt)>=im && (recipes[i]["ingredients"].length-cnt)<=iM)
                     {
