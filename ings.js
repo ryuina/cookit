@@ -1,0 +1,1 @@
+var ings = ["Bean", "Egg", "Carrot", "Garlic", "Green Onion", "Mushroom", "Rice", "Pepper", "Phedelini", "Pork", "Shrimp"];

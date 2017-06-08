@@ -8,52 +8,27 @@ $(document).ready(function() {
 		for (var i = 1; i < ingredients.length; i++) {
 			id += ", "+ingredients[i];
 		}
-		console.log(id);
-		return id;
-	}
-	function listToID(){
-		var id = ingredients[0];
-		for (var i = 1; i < ingredients.length; i++) {
-			id += ","+ingredients[i].toLowerCase();
-		}
-		console.log(id);
 		return id;
 	}
 	function findMenu() {
-		//var id = ingredients[0].toLowerCase();
-		result = []
-		for (var i = 0; i < menuList.length; i++) {
-			success = true;
-			for (var j = 0; j < ingredients.length; j++) {
-				if (jQuery.inArray(ingredients[j].toLowerCase(), menuList[i]["ingredients"]) == -1 ){
-					success = false;
-				}
-			}
-			if (success){
-				result.push(menuList[i]);
-			}
-		}
-		console.log(result);
-		return result
-		/*
+		var id = ingredients[0].toLowerCase();
 		for (var i = 1; i < ingredients.length; i++) {
 			id += ","+ingredients[i].toLowerCase();
 		}
-		return id;*/
+		return id;
 	}
 	function printMenu() {
 		$("#listTitle").val("Menu Results");
 		$("#menuList").css("margin-top", 66 + parseInt($("#addList").css('height')));
 
 		$("#menuResult").empty();
-		var menus = findMenu();
-		
-		console.log(menus);
+		var id = findMenu();
+		var menus = menuList[id];
 		for (var i = 0; i < menus.length; i++) {
 			$("#menuResult").append($('<div class=\"menuLink\">')
-								.append($('<a>').attr('href','filter/filter.html?menu='+menus[i]["name"]+'&ingredients='+listToID())
-									.append($('<div class=\"menuImg\">').append('<img src='+menuSrc[menus[i]["name"]]+'>')))
-								.append($('<div class=\"menuTitle\">').append($('<span class=\"title\">').append(menus[i]["name"]))));
+								.append($('<a>').attr('href','filter/filter.html?menu='+menus[i]+'&ingredients='+id)
+									.append($('<div class=\"menuImg\">').append('<img src='+menuSrc[menus[i]]+'>')))
+								.append($('<div class=\"menuTitle\">').append($('<span class=\"title\">').append(menus[i]))));
 			$("#menuResult").append($('<div class=\"container-19\">'));
 			
 		};
@@ -64,6 +39,7 @@ $(document).ready(function() {
 			if (ingredients.length){
 				$('#addList').show();
 				$(".mainLogo img").attr('src', 'img/Ingredient_tab_close.png')
+				$("#menuList").css("margin-top", 66 + parseInt($("#addList").css('height')));
 
 			}
 			$('#searchInput').val("");
@@ -71,10 +47,11 @@ $(document).ready(function() {
 
 		$(".mainLogo").click(function () {
 			if( $('#addList').is(':visible') ) {
-    			$(".mainLogo img").attr('src', 'img/cookit_logo.png')
+    			$(".mainLogo img").attr('src', 'img/cookit_logo.png');
 
     			$('#addList').hide();
     			$('#searchInput').val(listToString());
+    			$("#menuList").css("margin-top", 66);
 			}
 			else {
     			// it's not visible so do something else
@@ -94,17 +71,20 @@ $(document).ready(function() {
 		$("#searchInput").keyup(function(event){
     		if(event.keyCode == 13){
         		$("#addButton").click();
+        		$( "#searchInput" ).autocomplete( "close" );
     		}
     	})
     }
 	function cancelClick() {
 		$(".deleteIngre").click(function () {
-			console.log($(this).closest('.ingreBox').data('idx'));
+			console.log("111");
+			console.log($(this).closest('.ingreName'));
+			$(this).parent('.ingreBox').remove();
 			ingredients.splice($(this).closest('.ingreBox').data('idx'), 1);
 
-			$(this).closest('.ingreBox').remove();
-
 			if (ingredients.length == 0){
+				console.log("122");
+				$(".mainLogo img").attr('src', 'img/cookit_logo.png');
 				$('#addList').hide();
 				$("#menuList").css("margin-top", 66);
 				$("#listTitle").val("Recommenadation");
@@ -112,6 +92,7 @@ $(document).ready(function() {
 				$('#menuResult').append(rcmd);
 			}
 			else{
+				console.log("222");
 				printMenu();
 			}
 				
@@ -133,7 +114,37 @@ $(document).ready(function() {
 		}
 	}
 
+	function autoComplete() {
+		/*
+		var options = {
+			data : ings,
+			list: {
+				onClickEvent: function() {
+					addIngredient();
+				},
+				match: {
+					enabled: true
+				}
+			}
+		}
+		$('#searchInput').easyAutocomplete(options);	
+		*/
+		$('#searchInput').autocomplete({
+			source: ings,
+			minLength: 2,
+			select: function (event, ui) {
+				$(this).val(ui.item.value);
+				addIngredient();
+				$(this).val("");
+				$(this).focus();
+				return false;
+			}
+		});
+
+		
+	}
 	onClick();
 	enter();
 	searchClick();
+	autoComplete();
 });
