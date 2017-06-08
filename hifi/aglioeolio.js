@@ -2,8 +2,10 @@
 // has finished loading in the browser.
 
 $( document ).ready(function() {
+  /*
+    $(document).touchEnd(function(event){
+                console.log("mousemove");
 
-    $(document).mousemove(function(event){
         $("video").get(0).pause();
     var element = document.getElementsByClassName("swiper-slide-active");
     if(element != undefined) {
@@ -11,15 +13,19 @@ $( document ).ready(function() {
         $(".recipe_step").text("Step "+id);
     }
 });
+    */
     
-    
-        $(document).on("swipe", function(event){
-            $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id - 1;
-        $(".recipe_step").text("Step "+id);
-    }
+        $(document).bind("touchend", function(event){
+          console.log("swipe");
+          $("video").get(0).pause();
+          var element = document.getElementsByClassName("swiper-slide-active");
+          if(element != undefined) {
+            console.log("element");
+              var id = element[0].id - 1;
+              $(".recipe_step").text("Step "+id);
+             slider.slider( "value", id-1 );
+
+          }
 });
     
     
@@ -42,7 +48,7 @@ $( document ).ready(function() {
 
     $( "#slider .ui-slider-range" ).css('background', '#109E92');
 
-    
+    /*
     $(document).mousemove(function(event){
         var element = document.getElementsByClassName("swiper-slide-active");
         if(element != undefined) {
@@ -60,7 +66,7 @@ $( document ).ready(function() {
             slider.slider( "value", id-1 );
         }
     });
-    
+    */
     
     
 
