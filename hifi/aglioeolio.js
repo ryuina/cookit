@@ -39,7 +39,6 @@ $( document ).ready(function() {
         min:0,
         max: ticks.length,
         start: function(event, ui) {
-            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
         },
         change: function(event, ui) {
             mySwiper.slideTo(ui.value);

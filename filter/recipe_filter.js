@@ -120,7 +120,6 @@ $( document ).ready(function() {
             max: ticks.length,
             values: [0,3],
             start: function(event, ui) {
-                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
             },/*
             change: function(event, ui) {
                 mySwiper.slideTo(ui.value);
@@ -150,7 +149,6 @@ $( document ).ready(function() {
             max: ticks.length,
             values: [0,7],
             start: function(event, ui) {
-                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
             },/*
             change: function(event, ui) {
                 mySwiper.slideTo(ui.value);
@@ -181,7 +179,6 @@ $( document ).ready(function() {
             max: ticks.length,
             values: [0,6],
             start: function(event, ui) {
-                event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
             },
 //            change: function(event, ui) {
 //                $(this).value=ui.value;
