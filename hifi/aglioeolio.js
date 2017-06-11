@@ -2,30 +2,22 @@
 // has finished loading in the browser.
 
 $( document ).ready(function() {
-  /*
-    $(document).touchEnd(function(event){
-                console.log("mousemove");
-
-        $("video").get(0).pause();
+                    
+                    var lastid = 0;
+        $(document).on("touchend", function(event){
+            $("video").get(0).pause();
     var element = document.getElementsByClassName("swiper-slide-active");
     if(element != undefined) {
-        var id = element[0].id -1;
+        var id = element[0].id - 1;
+                       console.log(id);
+                       console.log(lastid);
+                       if (lastid != id){
         $(".recipe_step").text("Step "+id);
+        slider.slider( "value", id);
+                       $("body").animate( { scrollTop : 0 }, 500 );;
+                       }
+                       lastid = id;
     }
-});
-    */
-    
-        $(document).bind("touchend", function(event){
-          console.log("swipe");
-          $("video").get(0).pause();
-          var element = document.getElementsByClassName("swiper-slide-active");
-          if(element != undefined) {
-            console.log("element");
-              var id = element[0].id - 1;
-              $(".recipe_step").text("Step "+id);
-             slider.slider( "value", id-1 );
-
-          }
 });
     
     
@@ -39,6 +31,7 @@ $( document ).ready(function() {
         min:0,
         max: ticks.length,
         start: function(event, ui) {
+            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
         },
         change: function(event, ui) {
             mySwiper.slideTo(ui.value);
@@ -46,26 +39,7 @@ $( document ).ready(function() {
     });
 
     $( "#slider .ui-slider-range" ).css('background', '#109E92');
-
-    /*
-    $(document).mousemove(function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
-
-    $(document).on("Swipe",function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
-    */
+    
     
     
 
@@ -89,7 +63,7 @@ $( document ).ready(function() {
     
 
     
-    $("#peperoncino.subst").click(function(){
+    $("#peperoncino.ingresubst").click(function(){
         console.log(peperoncinostatus);
         if (peperoncinostatus == 0){
             $("#peperoncino.substtab").show();
@@ -102,24 +76,27 @@ $( document ).ready(function() {
     });
     
     $("#cheongyang_chili.substcontent").click(function(){
-        $("#peperoncino.subst").text("cheongyang chili");
+        $("#peperoncino.ingresubst").text("cheongyang chili");
         $("#peperoncino1").text("cheongyang chili");
+        $("#peperoncino0").text("cheongyang chili");
         $("#cheongyang_chili.substcontent").hide();
         $("#peperoncino.substcontent").show();
         $("#red_eyes_chili.substcontent").show();
     });
     
     $("#red_eyes_chili.substcontent").click(function(){
-        $("#peperoncino.subst").text("red eye's chili");
+        $("#peperoncino.ingresubst").text("red eye's chili");
         $("#peperoncino1").text("red eye's chili");
+        $("#peperoncino0").text("red eye's chili");
         $("#red_eyes_chili.substcontent").hide();
         $("#peperoncino.substcontent").show();
         $("#cheongyang_chili.substcontent").show();
     });
     
     $("#peperoncino.substcontent").click(function(){
-        $("#peperoncino.subst").text("peperoncino");
+        $("#peperoncino.ingresubst").text("peperoncino");
         $("#peperoncino1").text("peperoncino");
+        $("#peperoncino0").text("peperoncino");
         $("#peperoncino.substcontent").hide();
         $("#red_eyes_chili.substcontent").show();
         $("#cheongyang_chili.substcontent").show();
@@ -152,7 +129,7 @@ $( document ).ready(function() {
     });
     
                     
-                    $("#phedelini.subst").click(function(){
+                    $("#phedelini.ingresubst").click(function(){
                                                   console.log(phedelinistatus);
                                                   if (phedelinistatus == 0){
                                                   $("#phedelini.substtab").show();
@@ -165,7 +142,8 @@ $( document ).ready(function() {
                                                   });
     
     $("#spaghettini.substcontent").click(function(){
-        $("#phedelini.subst").text("spaghettini");
+        $("#phedelini.ingresubst").text("spaghettini");
+        $("#phedelini0").text("spaghettini");
         $("#phedelini1").text("spaghettini");
         $("#phedelini2").text("spaghettini");
         $("#phedelini3").text("spaghettini");
@@ -175,7 +153,8 @@ $( document ).ready(function() {
     });
     
     $("#plain_noodle.substcontent").click(function(){
-        $("#phedelini.subst").text("plain noodle");
+        $("#phedelini.ingresubst").text("plain noodle");
+        $("#phedelini0").text("plain noodle");
         $("#phedelini1").text("plain noodle");
         $("#phedelini2").text("plain noodle");
         $("#phedelini3").text("plain noodle");
@@ -185,7 +164,8 @@ $( document ).ready(function() {
     });
     
     $("#phedelini.substcontent").click(function(){
-        $("#phedelini.subst").text("phedelini");
+        $("#phedelini.ingresubst").text("phedelini");
+        $("#phedelini0").text("phedelini");
         $("#phedelini1").text("phedelini");
         $("#phedelini2").text("phedelini");
         $("#phedelini3").text("phedelini");
@@ -208,7 +188,7 @@ $( document ).ready(function() {
                                                   }
                                                   });
                     
-                    $("#pan.subst").click(function(){
+                    $("#pan.ingresubst").click(function(){
                                                   console.log(panstatus);
                                                   if (panstatus == 0){
                                                   $("#pan.substtab").show();
@@ -221,13 +201,15 @@ $( document ).ready(function() {
                                                   });
     
     $("#pot.substcontent").click(function(){
-        $("#pan.subst").text("pot");
+        $("#pan.ingresubst").text("pot");
+        $("#pan0").text("pot");
         $("#pan.substcontent").show();
         $("#pot.substcontent").hide();
     });
     
     $("#pan.substcontent").click(function(){
-        $("#pan.subst").text("pan");
+        $("#pan.ingresubst").text("pan");
+        $("#pan0.subst").text("pan");
         $("#pan.substcontent").hide();
         $("#pot.substcontent").show();
     });

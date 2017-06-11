@@ -5,7 +5,6 @@
         <title>Task 3 : Recipe Optimization</title>
         <meta charset="UTF-8">
             <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-            <link href="./slider.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="division.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
@@ -19,15 +18,19 @@
     <body>
         <!---------------------------------------------- header ------------------------------------------------>
         <div class="header">
-            <a href="../index.html"><div class="home_menu"><img src="./cookit_logo.png" class="logo"></div></a>
+            <div id="mainLogoBox">
+                <div class="home_menu">
+                    <a href="../index.html"><img src="../img/cookit_logo.png" class="logo">
+                        </a>
+                </div>
+            </div>
             <div class="task_title">Recipe</div>
-            <div class="back_button"><img src="./back.png" class="back"></div>
         </div>
         
         <!--------------------------------------- title & progress bar ----------------------------------------->
         <div class="controller">
             <div class="recipe_title">Creamy Carbonara</div>
-            <div class="recipe_step">Step 1</div>
+            <div class="recipe_step">Step 0</div>
             <div class="control_bar"><div id="slider"></div></div>
         </div>
         
@@ -43,13 +46,24 @@
                         <div class="ingretitle">Ingredients</div>
                         <div class="ingre">Bacon</div>
                         <div class="ingre">3 Garlics</div>
-                        <div class="ingre">1 Portion of Phedelini</div>
+                        <div class="ingresubst" id="phedelini">Phedelini</div>
+                        <div class="substtab" id="phedelini">
+                            <div class="substtitle">Pick Substitute</div>
+                            <div> <button class="substcontent" id="spaghettini">Spaghettini</button></div>
+                            <div> <button class="substcontent" id="plain_noodle">Plain noodle</button></div>
+                            <div> <button class="substcontent" id="phedelini">Phedelini</button></div>
+                        </div>
                         <div class="ingre">2 Eggs</div>
                         <div class="ingre">A cup of Parmesan</div>
                         <div class="ingre">Olive oil</div>
 
                     <div class="cooktitle">Cookware</div>
-                    <div class="ingre">Pan</div>
+                    <div class="ingresubst" id="pan">Pan</div>
+                    <div class="substtab" id="pan">
+                        <div class="substtitle">Pick Substitute</div>
+                        <div><button class="substcontent" id="pot">Pot</button></div>
+                        <div><button class="substcontent" id="pan">Pan</button></div>
+                    </div>
                     <div class="ingre">Knife</div>
                     <div class="ingre">Chopping board</div>
                     <div class="ingre">Pot</div>
@@ -60,7 +74,7 @@
                 <div class="swiper-slide" id="2">
         <!--        Content-->
                     <div class="recipecontent">
-                        Put <span class="subst" id="salt">1% of salt</span> in boiling water and boil <span class="subst" id="phedelini">phedelini</span> for a given time.
+                        Put <span class="subst" id="salt">1% of salt</span> in boiling water and boil <span id="phedelini0">phedelini</span> for a given time.
                     </div>
         <!--        Subst-->
                     <div class="base">
@@ -68,12 +82,6 @@
                             <div class="substtitle">Substitute</div>
                             <div class="substcontent" id="pinch">1 pinch of salt per 100ml</div>
                             <div class="substcontent" id="salt">1% of salt</div>
-                        </div>
-                        <div class="substtab" id="phedelini">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="spaghettini">Spaghettini</div>
-                            <div class="substcontent" id="plain_noodle">Plain noodle</div>
-                            <div class="substcontent" id="phedelini">Phedelini</div>
                         </div>
                     </div>
                 </div>
@@ -111,7 +119,7 @@
                 <div class="swiper-slide" id="6">
         <!--        Content-->
                     <div class="recipecontent">
-                        <span class="help" id="garlic">When bacon is shrunken</span>, Put a half cup of water that boiled <span id="phedelini1">phedelini</span> in <span class="subst" id="pan">pan</span>.
+                        <span class="help" id="garlic">When bacon is shrunken</span>, Put a half cup of water that boiled <span id="phedelini1">phedelini</span> in <span id="pan0">pan</span>.
                     </div>
         <!--        Subst-->
                     <div class="base">
@@ -120,11 +128,7 @@
                                 <video controls class="videobacon"><source src="./bacon.mp4" type="video/mp4"></video>
                             </div>
                         </div>
-                        <div class="substtab" id="pan">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="pot">Pot</div>
-                            <div class="substcontent" id="pan">Pan</div>
-                        </div>
+                        
                     </div>
                 </div>
                 

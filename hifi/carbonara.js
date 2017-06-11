@@ -3,25 +3,22 @@
 
 $( document ).ready(function() {
 
-    $(document).mousemove(function(event){
-        $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id -1;
-        $(".recipe_step").text("Step "+id);
-        
-    }
-});
-    
-       $(document).on("swipe", function(event){
-           $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id - 1;
-        $(".recipe_step").text("Step "+id);
-    }
-});
-    
+                    var lastid = 0;
+                    $(document).on("touchend", function(event){
+                                   $("video").get(0).pause();
+                                   var element = document.getElementsByClassName("swiper-slide-active");
+                                   if(element != undefined) {
+                                    var id = element[0].id - 1;
+                                    console.log(id);
+                                    console.log(lastid);
+                                   if (lastid != id){
+                                   $(".recipe_step").text("Step "+id);
+                                   slider.slider( "value", id);
+                                   $("body").animate( { scrollTop : 0 }, 500 );
+                                   }
+                                   lastid = id;
+                                   }
+                                   });
     
     var mySwiper = new Swiper('.swiper-container');
     
@@ -33,6 +30,7 @@ $( document ).ready(function() {
         min:0,
         max: ticks.length,
         start: function(event, ui) {
+            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
         },
         change: function(event, ui) {
             mySwiper.slideTo(ui.value);
@@ -40,25 +38,6 @@ $( document ).ready(function() {
     });
 
     $( "#slider .ui-slider-range" ).css('background', '#109E92');
-
-    
-    $(document).mousemove(function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
-
-    $(document).on("Swipe",function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
     
 
     var peperoncinostatus = 0;
@@ -144,7 +123,7 @@ $( document ).ready(function() {
     });
     
                     
-                    $("#phedelini.subst").click(function(){
+                    $("#phedelini.ingresubst").click(function(){
                                                   console.log(phedelinistatus);
                                                   if (phedelinistatus == 0){
                                                   $("#phedelini.substtab").show();
@@ -157,7 +136,8 @@ $( document ).ready(function() {
                                                   });
     
     $("#spaghettini.substcontent").click(function(){
-        $("#phedelini.subst").text("spaghettini");
+        $("#phedelini.ingresubst").text("spaghettini");
+        $("#phedelini0").text("spaghettini");
         $("#phedelini1").text("spaghettini");
         $("#phedelini2").text("spaghettini");
         $("#phedelini3").text("spaghettini");
@@ -167,7 +147,8 @@ $( document ).ready(function() {
     });
     
     $("#plain_noodle.substcontent").click(function(){
-        $("#phedelini.subst").text("plain noodle");
+        $("#phedelini.ingresubst").text("plain noodle");
+        $("#phedelini0").text("plain noodle");
         $("#phedelini1").text("plain noodle");
         $("#phedelini2").text("plain noodle");
         $("#phedelini3").text("plain noodle");
@@ -177,7 +158,8 @@ $( document ).ready(function() {
     });
     
     $("#phedelini.substcontent").click(function(){
-        $("#phedelini.subst").text("phedelini");
+        $("#phedelini.ingresubst").text("phedelini");
+        $("#phedelini0").text("phedelini");
         $("#phedelini1").text("phedelini");
         $("#phedelini2").text("phedelini");
         $("#phedelini3").text("phedelini");
@@ -200,7 +182,7 @@ $( document ).ready(function() {
                                                   }
                                                   });
                     
-                    $("#pan.subst").click(function(){
+                    $("#pan.ingresubst").click(function(){
                                                   console.log(panstatus);
                                                   if (panstatus == 0){
                                                   $("#pan.substtab").show();
@@ -213,13 +195,15 @@ $( document ).ready(function() {
                                                   });
     
     $("#pot.substcontent").click(function(){
-        $("#pan.subst").text("pot");
+        $("#pan.ingresubst").text("pot");
+        $("#pan0").text("pot");
         $("#pan.substcontent").show();
         $("#pot.substcontent").hide();
     });
     
     $("#pan.substcontent").click(function(){
-        $("#pan.subst").text("pan");
+        $("#pan.ingresubst").text("pan");
+        $("#pan0").text("pot");
         $("#pan.substcontent").hide();
         $("#pot.substcontent").show();
     });

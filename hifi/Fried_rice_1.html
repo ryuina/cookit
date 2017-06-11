@@ -5,7 +5,6 @@
         <title>Task 3 : Recipe Optimization</title>
         <meta charset="UTF-8">
             <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-            <link href="./slider.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="division.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
@@ -19,15 +18,19 @@
     <body>
         <!---------------------------------------------- header ------------------------------------------------>
         <div class="header">
-            <a href="../index.html"><div class="home_menu"><img src="./cookit_logo.png" class="logo"></div></a>
+            <div id="mainLogoBox">
+                <div class="home_menu">
+                    <a href="../index.html"><img src="../img/cookit_logo.png" class="logo">
+                        </a>
+                </div>
+            </div>
             <div class="task_title">Recipe</div>
-            <div class="back_button"><img src="./back.png" class="back"></div>
         </div>
         
         <!--------------------------------------- title & progress bar ----------------------------------------->
         <div class="controller">
             <div class="recipe_title">Fried rice restaurant style</div>
-            <div class="recipe_step">Step 1</div>
+            <div class="recipe_step">Step 0</div>
             <div class="control_bar"><div id="slider"></div></div>
         </div>
         
@@ -50,10 +53,27 @@
                         <div class="ingre">Soy sauce</div>
 
                     <div class="cooktitle">Cookware</div>
-                    <div class="ingre">2 Saucepans</div>
+                    <div class="ingresubst" id="saucepan">Big saucepan</div>
+                    <div class="substtab" id="saucepan">
+                        <div class="substtitle">Pick Substitute</div>
+                        <div> <button class="substcontent" id="electric">Electric rice cooker</button></div>
+                        <div> <button class="substcontent" id="ricecooker">Rice cooker</button></div>
+                        <div> <button class="substcontent" id="saucepan">Big saucepan</button></div>
+                    </div>
+                    <div class="ingresubst" id="small">Small saucepan</div>
+                    <div class="substtab" id="small">
+                        <div class="substtitle">Pick Substitute</div>
+                        <div> <button class="substcontent" id="pot">Pot</button></div>
+                        <div> <button class="substcontent" id="small">Small saucepan</button></div>
+                    </div>
                     <div class="ingre">Knife</div>
                     <div class="ingre">Chopping board</div>
-                    <div class="ingre">Wok</div>
+                    <div class="ingresubst" id="wok">Wok</div>
+                    <div class="substtab" id="wok">
+                        <div class="substtitle">Pick Substitute</div>
+                        <div> <button class="substcontent" id="pan">Pan</button></div>
+                        <div> <button class="substcontent" id="wok">Wok</button></div>
+                    </div>
                 </div>
                 
                 
@@ -61,23 +81,18 @@
                 <div class="swiper-slide" id="2">
         <!--        Content-->
                     <div class="recipecontent">
-                        In a <span class="subst" id="saucepan">saucepan</span>, combine rice and water. Bring to a boil. Reduce heat, cover, and simmer for 20 minutes.
+                        In a <span id="saucepan0">big saucepan</span>, combine rice and water. Bring to a boil. Reduce heat, cover, and simmer for 20 minutes.
                     </div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="saucepan">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="electric">Electric rice cooker</div>
-                            <div class="substcontent" id="ricecooker">Rice cooker</div>
-                            <div class="substcontent" id="saucepan">Saucepan</div>
-                        </div>
+                        
                     </div>
                 </div>
                 
                 <div class="swiper-slide" id="3">
         <!--        Content-->
                     <div class="recipecontent">
-                        In a <span class="subst" id="small">small saucepan</span>, boil carrots in water about 3 to 5 minutes. Drop peas into boiling water, and drain.
+                        In a <span id="small0">small saucepan</span>, boil carrots in water about 3 to 5 minutes. Drop peas into boiling water, and drain.
                     </div>
         <!--        Subst-->
                     <div class="base">
@@ -92,15 +107,11 @@
                 <div class="swiper-slide" id="4">
         <!--        Content-->
                     <div class="recipecontent">
-                        Heat <span class="subst" id="wok">wok</span> over high heat. Pour in oil, then stir in carrots and peas; cook about 30 seconds.
+                        Heat <span id="wok0">wok</span> over high heat. Pour in oil, then stir in carrots and peas; cook about 30 seconds.
                     </div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="wok">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="pan">Pan</div>
-                            <div class="substcontent" id="wok">Wok</div>
-                        </div>
+                        
                     </div>
                 </div>
                 

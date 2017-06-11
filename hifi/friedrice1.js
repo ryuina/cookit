@@ -3,24 +3,22 @@
 
 $( document ).ready(function() {
 
-    $(document).mousemove(function(event){
-        $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id -1;
-        $(".recipe_step").text("Step "+id);
-    }
-});
-    
-    
-       $(document).on("swipe", function(event){
-           $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id - 1;
-        $(".recipe_step").text("Step "+id);
-    }
-});
+                    var lastid = 0;
+                    $(document).on("touchend", function(event){
+                                   $("video").get(0).pause();
+                                   var element = document.getElementsByClassName("swiper-slide-active");
+                                   if(element != undefined) {
+                                   var id = element[0].id - 1;
+                                   console.log(id);
+                                   console.log(lastid);
+                                   if (lastid != id){
+                                   $(".recipe_step").text("Step "+id);
+                                   slider.slider( "value", id);
+                                   $("body").animate( { scrollTop : 0 }, 500 );
+                                   }
+                                   lastid = id;
+                                   }
+                                   });
     
     
     var mySwiper = new Swiper('.swiper-container');
@@ -33,6 +31,7 @@ $( document ).ready(function() {
         min:0,
         max: ticks.length,
         start: function(event, ui) {
+            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
         },
         change: function(event, ui) {
             mySwiper.slideTo(ui.value);
@@ -40,25 +39,6 @@ $( document ).ready(function() {
     });
 
     $( "#slider .ui-slider-range" ).css('background', '#109E92');
-
-    
-    $(document).mousemove(function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
-
-    $(document).on("Swipe",function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
     
 
     var saucepanstatus = 0;
@@ -78,7 +58,7 @@ $( document ).ready(function() {
     
 
     
-    $("#saucepan.subst").click(function(){
+    $("#saucepan.ingresubst").click(function(){
         if (saucepanstatus == 0){
             $("#saucepan.substtab").show();
             saucepanstatus = 1;
@@ -90,21 +70,24 @@ $( document ).ready(function() {
     });
     
     $("#electric.substcontent").click(function(){
-        $("#saucepan.subst").text("electric rice cooker");
+        $("#saucepan.ingresubst").text("Electric rice cooker");
+        $("#saucepan0").text("electric rice cooker");
         $("#electric.substcontent").hide();
         $("#ricecooker.substcontent").show();
         $("#saucepan.substcontent").show();
     });
     
     $("#ricecooker.substcontent").click(function(){
-        $("#saucepan.subst").text("rice cooker");
+        $("#saucepan.ingresubst").text("Rice cooker");
+        $("#saucepan0").text("rice cooker");
         $("#electric.substcontent").show();
         $("#ricecooker.substcontent").hide();
         $("#saucepan.substcontent").show();
     });
     
     $("#saucepan.substcontent").click(function(){
-        $("#saucepan.subst").text("saucepan");
+        $("#saucepan.ingresubst").text("Big saucepan");
+        $("#saucepan0").text("big saucepan");
         $("#electric.substcontent").show();
         $("#ricecooker.substcontent").show();
         $("#saucepan.substcontent").hide();
@@ -128,7 +111,7 @@ $( document ).ready(function() {
                                                   }
                                                   });
                     
-                    $("#small.subst").click(function(){
+                    $("#small.ingresubst").click(function(){
                                                   if (smallstatus == 0){
                                                   $("#small.substtab").show();
                                                   smallstatus = 1;
@@ -140,18 +123,20 @@ $( document ).ready(function() {
                                                   });
     
     $("#pot.substcontent").click(function(){
-        $("#small.subst").text("pot");
+        $("#small.ingresubst").text("Pot");
+        $("#small0").text("pot");
         $("#small.substcontent").show();
         $("#pot.substcontent").hide();
     });
     
     $("#small.substcontent").click(function(){
-        $("#small.subst").text("small sauce pan");
+        $("#small.ingresubst").text("Small saucepan");
+        $("#small0").text("small saucepan");
         $("#small.substcontent").hide();
         $("#pot.substcontent").show();
     });
     
-    $("#wok.subst").click(function(){
+    $("#wok.ingresubst").click(function(){
                                                   if (wokstatus == 0){
                                                   $("#wok.substtab").show();
                                                   wokstatus = 1;
@@ -163,13 +148,15 @@ $( document ).ready(function() {
                                                   });
     
     $("#pan.substcontent").click(function(){
-        $("#wok.subst").text("pan");
+        $("#wok.ingresubst").text("Pan");
+        $("#wok0").text("pan");
         $("#wok.substcontent").show();
         $("#pan.substcontent").hide();
     });
     
     $("#wok.substcontent").click(function(){
-        $("#wok.subst").text("wok");
+        $("#wok.ingresubst").text("Wok");
+        $("#wok0").text("wok");
         $("#wok.substcontent").hide();
         $("#pan.substcontent").show();
     });

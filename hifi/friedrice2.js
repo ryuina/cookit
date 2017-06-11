@@ -3,24 +3,22 @@
 
 $( document ).ready(function() {
 
-    $(document).mousemove(function(event){
-        $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id -1;
-        $(".recipe_step").text("Step "+id);
-    }
-});
-    
-       $(document).on("swipe", function(event){
-           $("video").get(0).pause();
-    var element = document.getElementsByClassName("swiper-slide-active");
-    if(element != undefined) {
-        var id = element[0].id - 1;
-        $(".recipe_step").text("Step "+id);
-    }
-});
-    
+                    var lastid = 0;
+                    $(document).on("touchend", function(event){
+                                   $("video").get(0).pause();
+                                   var element = document.getElementsByClassName("swiper-slide-active");
+                                   if(element != undefined) {
+                                   var id = element[0].id - 1;
+                                   console.log(id);
+                                   console.log(lastid);
+                                   if (lastid != id){
+                                   $(".recipe_step").text("Step "+id);
+                                   slider.slider( "value", id);
+                                   $("body").animate( { scrollTop : 0 }, 500 );
+                                   }
+                                   lastid = id;
+                                   }
+                                   });
     
     var mySwiper = new Swiper('.swiper-container');
     
@@ -32,6 +30,7 @@ $( document ).ready(function() {
         min:0,
         max: ticks.length,
         start: function(event, ui) {
+            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
         },
         change: function(event, ui) {
             mySwiper.slideTo(ui.value);
@@ -40,24 +39,7 @@ $( document ).ready(function() {
 
     $( "#slider .ui-slider-range" ).css('background', '#109E92');
 
-    
-    $(document).mousemove(function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
 
-    $(document).on("Swipe",function(event){
-        var element = document.getElementsByClassName("swiper-slide-active");
-        if(element != undefined) {
-            var id = element[0].id;
-//            console.log(id);
-            slider.slider( "value", id-1 );
-        }
-    });
     
 
     var sesamestatus = 0;
@@ -77,7 +59,7 @@ $( document ).ready(function() {
     
 
     
-    $("#sesame.subst").click(function(){
+    $("#sesame.ingresubst").click(function(){
         if (sesamestatus == 0){
             $("#sesame.substtab").show();
             sesamestatus = 1;
@@ -89,21 +71,24 @@ $( document ).ready(function() {
     });
     
     $("#olive.substcontent").click(function(){
-        $("#sesame.subst").text("olive oil");
+        $("#sesame.ingresubst").text("olive oil");
+                                   $("#sesame0").text("olive oil");
         $("#olive.substcontent").hide();
         $("#canola.substcontent").show();
         $("#sesame.substcontent").show();
     });
     
     $("#canola.substcontent").click(function(){
-        $("#sesame.subst").text("canola oil");
+        $("#sesame.ingresubst").text("canola oil");
+                                    $("#sesame0").text("canola oil");
         $("#olive.substcontent").show();
         $("#canola.substcontent").hide();
         $("#sesame.substcontent").show();
     });
     
     $("#sesame.substcontent").click(function(){
-        $("#sesame.subst").text("sesame oil");
+        $("#sesame.ingresubst").text("sesame oil");
+                                    $("#sesame0").text("sesame oil");
         $("#olive.substcontent").show();
         $("#canola.substcontent").show();
         $("#sesame.substcontent").hide();
@@ -127,7 +112,7 @@ $( document ).ready(function() {
                                                   }
                                                   });
                     
-                    $("#white.subst").click(function(){
+                    $("#white.ingresubst").click(function(){
                                                   if (whitestatus == 0){
                                                   $("#white.substtab").show();
                                                   whitestatus = 1;
@@ -139,18 +124,20 @@ $( document ).ready(function() {
                                                   });
     
     $("#onion.substcontent").click(function(){
-        $("#white.subst").text("onion");
+        $("#white.ingresubst").text("onion");
+                                   $("#white0").text("onion");
         $("#white.substcontent").show();
         $("#onion.substcontent").hide();
     });
     
     $("#white.substcontent").click(function(){
-        $("#white.subst").text("white onion");
+        $("#white.ingresubst").text("white onion");
+                                   $("#white0").text("white onion");
         $("#white.substcontent").hide();
         $("#onion.substcontent").show();
     });
     
-    $("#wok.subst").click(function(){
+    $("#wok.ingresubst").click(function(){
                                                   if (wokstatus == 0){
                                                   $("#wok.substtab").show();
                                                   wokstatus = 1;
@@ -162,13 +149,15 @@ $( document ).ready(function() {
                                                   });
     
     $("#pan.substcontent").click(function(){
-        $("#wok.subst").text("pan");
+        $("#wok.ingresubst").text("pan");
+        $("#wok0").text("pan");
         $("#wok.substcontent").show();
         $("#pan.substcontent").hide();
     });
     
     $("#wok.substcontent").click(function(){
-        $("#wok.subst").text("wok");
+        $("#wok.ingresubst").text("wok");
+                                 $("#wok0").text("wok");
         $("#wok.substcontent").hide();
         $("#pan.substcontent").show();
     });

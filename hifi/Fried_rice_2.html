@@ -19,15 +19,19 @@
     <body>
         <!---------------------------------------------- header ------------------------------------------------>
         <div class="header">
-            <a href="../index.html"><div class="home_menu"><img src="./cookit_logo.png" class="logo"></div></a>
+            <div id="mainLogoBox">
+                <div class="home_menu">
+                    <a href="../index.html"><img src="../img/cookit_logo.png" class="logo">
+                        </a>
+                </div>
+            </div>
             <div class="task_title">Recipe</div>
-            <div class="back_button"><img src="./back.png" class="back"></div>
         </div>
         
         <!--------------------------------------- title & progress bar ----------------------------------------->
         <div class="controller">
             <div class="recipe_title">Chicken fried rice</div>
-            <div class="recipe_step">Step 1</div>
+            <div class="recipe_step">Step 0</div>
             <div class="control_bar"><div id="slider"></div></div>
         </div>
         
@@ -43,8 +47,19 @@
                         <div class="ingretitle">Ingredients</div>
                         <div class="ingre">1 pound chicken</div>
                         <div class="ingre">3 cups cooked rice</div>
-                        <div class="ingre">2 Tbs sesame oil</div>
-                        <div class="ingre">1 small white onion, chopped</div>
+                        <div class="ingresubst" id="sesame">Sesame oil</div>
+                        <div class="substtab" id="sesame">
+                            <div class="substtitle">Pick Substitute</button></div>
+                            <div> <button class="substcontent" id="olive">Olive oil</button></div>
+                            <div> <button class="substcontent" id="canola">Canola oil</button></div>
+                            <div> <button class="substcontent" id="sesame">Sesame oil</button></div>
+                        </div>
+                        <div class="ingre">White onion</div>
+                        <div class="substtab" id="white">
+                            <div class="substtitle">Pick Substitute</div>
+                            <div> <button class="substcontent" id="onion">Onion</button></div>
+                            <div> <button class="substcontent" id="white">White onion</button></div>
+                        </div>
                         <div class="ingre">1 cup frozen peas and carrots, thawed</div>
                         <div class="ingre">2-3 Tablespoons soy sauce</div>
                         <div class="ingre">2 eggs</div>
@@ -54,7 +69,12 @@
                     <div class="ingre">Spatula</div>
                     <div class="ingre">Knife</div>
                     <div class="ingre">Chopping board</div>
-                    <div class="ingre">Wok</div>
+                    <div class="ingresubst" id="wok">Wok</div>
+                    <div class="substtab" id="wok">
+                        <div class="substtitle">Pick Substitute</div>
+                        <div><button class="substcontent" id="pan">Pan</button></div>
+                        <div><button class="substcontent" id="wok">Wok</button></div>
+                    </div>
                 </div>
                 
                 
@@ -72,36 +92,23 @@
                 <div class="swiper-slide" id="3">
         <!--        Content-->
                     <div class="recipecontent">
-                        Preheat a <span class="subst" id="wok">wok</span> to medium heat and Pour <span class="subst" id="sesame">sesame oil</span> in the bottom.
+                        Preheat a <span id="wok0">wok</span> to medium heat and Pour <span id="sesame0">sesame oil</span> in the bottom.
                     </div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="wok">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="pan">Pan</div>
-                            <div class="substcontent" id="wok">Wok</div>
-                        </div>
-                        <div class="substtab" id="sesame">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="olive">Olive oil</div>
-                            <div class="substcontent" id="canola">Canola oil</div>
-                            <div class="substcontent" id="sesame">Sesame oil</div>
-                        </div>
+                        
+                        
                     </div>
                 </div>
                 
                 <div class="swiper-slide" id="4">
         <!--        Content-->
                     <div class="recipecontent">
-                        Add <span class="subst" id="white">white onion</span> and peas and carrots and fry until tender.
+                        Add <span id="white0">white onion</span> and peas and carrots and fry until tender.
                     </div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="white">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="onion">Onion</div>
-                            <div class="substcontent" id="white">White onion</div>
-                        </div>
+                        
                     </div>
                 </div>
                 

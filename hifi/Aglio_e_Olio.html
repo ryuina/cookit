@@ -31,7 +31,7 @@
         <!--------------------------------------- title & progress bar ----------------------------------------->
         <div class="controller">
             <div class="recipe_title">Basic Aglio e Olio</div>
-            <div class="recipe_step">Step 1</div>
+            <div class="recipe_step">Step 0</div>
             <div class="control_bar"><div id="slider"></div></div>
         </div>
         
@@ -45,14 +45,31 @@
                     <div class="recipephoto"><img src="http://cdn.noshon.it/wp-content/uploads/2011-01-24-spaghetti-aglio-olio-4.jpg"></div>
 
                         <div class="ingretitle">Ingredients</div>
-                        <div class="ingre">Peperoncino</div>
+                        <div class="ingresubst" id="peperoncino">Peperoncino</div>
+                    <div class="substtab" id="peperoncino">
+                            <div class="substtitle">Pick Substitute</div>
+                            <div><button class="substcontent" id="cheongyang_chili">Cheongyang chili</button></div>
+                            <div><button class="substcontent" id="red_eyes_chili">Red eye's chili</button></div>
+                            <div><button class="substcontent" id="peperoncino">Peperoncino</button></div>
+                        </div>
                         <div class="ingre">Garlic</div>
-                        <div class="ingre">Phedelini</div>
+                        <div class="ingresubst" id="phedelini">Phedelini</div>
+                    <div class="substtab" id="phedelini">
+                            <div class="substtitle">Pick Substitute</div>
+                            <div> <button class="substcontent" id="spaghettini">Spaghettini</button></div>
+                            <div> <button class="substcontent" id="plain_noodle">Plain noodle</button></div>
+                            <div> <button class="substcontent" id="phedelini">Phedelini</button></div>
+                        </div>
                         <div class="ingre">Olive oil</div>
                         <div class="ingre">Salt</div>
 
                     <div class="cooktitle">Cookware</div>
-                    <div class="ingre">Pan</div>
+                    <div class="ingresubst" id="pan">Pan</div>
+                    <div class="substtab" id="pan">
+                            <div class="substtitle">Pick Substitute</div>
+                            <div> <button class="substcontent" id="pot">Pot</button></div>
+                            <div> <button class="substcontent" id="pan">Pan</button></div>
+                        </div>
                     <div class="ingre">Knife</div>
                     <div class="ingre">Chopping board</div>
                     <div class="ingre">Pot</div>
@@ -62,37 +79,28 @@
                 <div class="swiper-slide" id="2">
         <!--        Content-->
                     <div class="recipecontent">
-                        Slice garlic and break <span class="subst" id="peperoncino">peperoncino</span>.
+                        Slice garlic and break <span id="peperoncino0">peperoncino</span>.
                     </div>
+                    <div class="stepphoto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSpuaZ0J5CvqdDyl38nnSN_MlhbDI9XZx7dtJpeII7EMstEKF"></div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="peperoncino">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="cheongyang_chili">Cheongyang chili</div>
-                            <div class="substcontent" id="red_eyes_chili">Red eye's chili</div>
-                            <div class="substcontent" id="peperoncino">Peperoncino</div>
-                        </div>
+                        
                     </div>
                 </div>
         
                 <div class="swiper-slide" id="3">
         <!--        Content-->
                     <div class="recipecontent">
-                        Put <span class="subst" id="salt">1% of salt</span> in boiling water and boil <span class="subst" id="phedelini">phedelini</span> for a given time.
+                        Put <span class="subst" id="salt">1% of salt</span> in boiling water and boil <span id="phedelini0">phedelini</span> for a given time.
                     </div>
         <!--        Subst-->
                     <div class="base">
                         <div class="substtab" id="salt">
-                            <div class="substtitle">Substitute</div>
+                            <div class="substtitle">Pick Substitute</div>
                             <div class="substcontent" id="pinch">1 pinch of salt per 100ml</div>
                             <div class="substcontent" id="salt">1% of salt</div>
                         </div>
-                        <div class="substtab" id="phedelini">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="spaghettini">Spaghettini</div>
-                            <div class="substcontent" id="plain_noodle">Plain noodle</div>
-                            <div class="substcontent" id="phedelini">Phedelini</div>
-                        </div>
+                    <div class="stepphoto"><img src="http://cfile6.uf.tistory.com/image/27090B415614620206ED4D"></div>
                     </div>
                 </div>
                 
@@ -103,6 +111,7 @@
                     </div>
         <!--        Subst-->
                     <div class="base">
+                        <div class="stepphoto"><img src="https://i.ytimg.com/vi/9sCZnjeC2Ss/hqdefault.jpg"></div>
                     </div>
                 </div>
                 
@@ -118,21 +127,18 @@
                                 <video controls><source src="./garlic.mp4" type="video/mp4"></video>
                             </div>
                         </div>
+                        <div class="stepphoto"><img src="http://cfile27.uf.tistory.com/image/26539D3F5616A0C217EDEA"></div>
                     </div>
                 </div>
                 
                 <div class="swiper-slide" id="6">
         <!--        Content-->
                     <div class="recipecontent">
-                        Put a half cup of water that boiled <span id="phedelini1">phedelini</span> in <span class="subst" id="pan">pan</span>.
+                        Put a half cup of water that boiled <span id="phedelini1">phedelini</span> in <span id="pan0">pan</span>.
                     </div>
         <!--        Subst-->
                     <div class="base">
-                        <div class="substtab" id="pan">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent" id="pot">Pot</div>
-                            <div class="substcontent" id="pan">Pan</div>
-                        </div>
+                        <div class="stepphoto"><img src="https://s-media-cache-ak0.pinimg.com/originals/3e/aa/c0/3eaac06818036adc48460ddd0350b00d.jpg"></div>
                     </div>
                 </div>
                 
@@ -143,6 +149,7 @@
                     </div>
         <!--        Subst-->
                     <div class="base">
+                        <div class="stepphoto"><img src="http://cfile7.uf.tistory.com/image/26515B3656148907245618"></div>
                     </div>
                 </div>
                 
@@ -154,13 +161,11 @@
         <!--        Subst-->
                     <div class="base">
                         <div class="substtab" id="seasoning">
-                            <div class="substtitle">Substitute</div>
-                            <div class="substcontent">It is optional.</div>
+                            <div class="substtitle">It is optional.</div>
                         </div>
+                        <div class="stepphoto"><img src="http://cfile23.uf.tistory.com/image/274F7E4456146231117F80"></div>
                     </div>
                 </div>
-                
-                
                 <script>
                     var swiper = new Swiper('.swiper-container', {
                         pagination: '.swiper-pagination',
@@ -168,8 +173,8 @@
                     });
                 </script>
                  <div class="swiper-pagination"></div>
-                
             </div>
         </div>
+        
     </body>
 </html>
