@@ -2,7 +2,7 @@
 ver.1 (05/25)
 
 To start
-https://ryuina.github.io/cookit/index.html
+https://ryuina.github.io/cookit/tutorial.html
 
 Here are some helps to test well.
 
